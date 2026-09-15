@@ -1,0 +1,10 @@
+# RTK default thresholds. Override any of these at runtime without a rebuild via
+# RTK_MAX_LINES / RTK_MAX_CHARS / RTK_HEAD_LINES / RTK_TAIL_LINES /
+# RTK_DEDUPE_THRESHOLD / RTK_MAX_LINE_CHARS environment variables (env wins over this file).
+
+max_lines = 300
+max_chars = 20000
+head_lines = 50
+tail_lines = 50
+dedupe_threshold = 3
+max_line_chars = 2000

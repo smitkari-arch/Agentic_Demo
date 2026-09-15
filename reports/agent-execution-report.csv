@@ -1,0 +1,7 @@
+Timestamp,Skill,ActorName,JiraStoryKey,Status,WorkflowStage,Summary,Tokens,ToolUses,DurationMs,EventId
+2026-09-15T07:02:12.359Z,jira-story-readiness,Planner Agent,KAN-6,success,Story Readiness Review,Verdict: Ready for KAN-6,,,,evt-20260915-070212359
+2026-09-15T08:24:15.959Z,generate-test-scenarios,Designer Agent,KAN-6,success,Test Scenario Generation,5 test cases generated for KAN-6,,,,evt-20260915-082415959
+2026-09-15T10:14:43.012Z,jira-story-readiness,Planner Agent,KAN-6,success,Story Readiness Review,Verdict: Ready for KAN-6,,,,evt-20260915-101443012
+2026-09-15T10:16:44.521Z,generate-test-scenarios,Designer Agent,KAN-6,success,Test Scenario Generation,6 test cases generated for KAN-6,,,,evt-20260915-101644521
+2026-09-15T10:20:12.462Z,generate-playwright-ui-script,Scripter Agent,KAN-6,success,Script Generation (UI),"1 scenario scripted, npx playwright test passed",,,,evt-20260915-102012462
+2026-09-15T11:45:16.079Z,jira-story-readiness,Planner Agent,KAN-6,success,Story Readiness Review,Verdict: Ready for KAN-6,,,,evt-20260915-114516079

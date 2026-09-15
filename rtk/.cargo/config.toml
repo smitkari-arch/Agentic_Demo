@@ -1,0 +1,6 @@
+# Disables cargo's crates.io TLS revocation (OCSP/CRL) check — not certificate validation itself,
+# just the revocation lookup, which the corporate network's TLS-inspecting proxy on this machine
+# breaks with a CRYPT_E_NO_REVOCATION_CHECK error. Without this, `cargo build`/`cargo test` fail
+# outright on first dependency fetch. See rtk/README.md "Building" section.
+[http]
+check-revoke = false

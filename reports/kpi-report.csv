@@ -1,0 +1,2 @@
+Timestamp,Framework,Suite,Total,Passed,Failed,Skipped,DurationSec,SourceReportPath,AgentRuns
+2026-08-13T17:07:58.812Z,karate,runners.PracticeTestAutomationRunner,5,5,0,0,34.092,karateTests\target\surefire-reports\TEST-runners.PracticeTestAutomationRunner.xml,13

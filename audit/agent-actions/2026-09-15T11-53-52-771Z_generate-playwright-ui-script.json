@@ -1,0 +1,32 @@
+{
+  "event_id": "evt-20260915-115352771",
+  "correlation_id": "KAN-6-run-20260915",
+  "jira_story_key": "KAN-6",
+  "event_timestamp": "2026-09-15T11:53:52.771Z",
+  "event_type": "agent_task_completed",
+  "event_category": "scripting",
+  "workflow_stage": "Script Generation (UI)",
+  "actor": {
+    "actor_type": "agent",
+    "actor_name": "Scripter Agent",
+    "actor_id": "agent.scripter.v1"
+  },
+  "source": {
+    "source_system": "GitHub Copilot IDE",
+    "source_component": "agent-runtime",
+    "source_reference_id": null
+  },
+  "status": "success",
+  "message": "1 scenario scripted and npx playwright test passed",
+  "input_reference": {},
+  "usage": {
+    "total_tokens": null,
+    "tool_uses": null,
+    "duration_ms": null
+  },
+  "additional_details": {
+    "model_name": "GitHub Copilot",
+    "framework_version": "phase1-operationalization-v1",
+    "environment": "dev"
+  }
+}

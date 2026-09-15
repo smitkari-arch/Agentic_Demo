@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp_atlassian-mcp_.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .github/scripts/pretool-jira-guard.js",
+            "statusMessage": "Checking Jira story-creation guardrail + scanning tool input for PII/secrets..."
+          }
+        ]
+      }
+    ]
+  }
+}

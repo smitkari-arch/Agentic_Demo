@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .github/scripts/pre-prompt-pii-scan.js",
+            "statusMessage": "Scanning prompt for PII/secrets..."
+          }
+        ]
+      }
+    ]
+  }
+}

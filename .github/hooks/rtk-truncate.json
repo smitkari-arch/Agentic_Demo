@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "run_in_terminal",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .github/scripts/post-tool-rtk.truncate.js",
+            "statusMessage": "Running RTK token-reduction pass on command output..."
+          }
+        ]
+      }
+    ]
+  }
+}

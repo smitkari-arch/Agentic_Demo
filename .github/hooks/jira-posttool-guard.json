@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "mcp_atlassian-mcp_.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .github/scripts/posttool-jira-guard.js",
+            "statusMessage": "Scanning tool output for PII/secrets + checking story readiness..."
+          }
+        ]
+      }
+    ]
+  }
+}
