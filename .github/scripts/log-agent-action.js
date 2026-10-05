@@ -18,11 +18,13 @@
 //     [--input "<ref>"] [--jira-story-key <KEY>] [--correlation-id <id>] \
 //     [--event-type <type>] [--event-category <category>] [--workflow-stage "<stage>"] \
 //     [--actor-name "<name>"] [--actor-id <id>] \
-//     [--tokens <total_tokens>] [--tool-uses <count>] [--duration-ms <ms>]
+//     [--tokens <total_tokens>] [--tool-uses <count>] [--duration-ms <ms>] \
+//     [--story-spec-path <path>] [--playwright-spec-path <path>] [--failure-report-path <path>]
 'use strict';
 
 const fs = require('fs');
 const path = require('path');
+const { spawnSync } = require('child_process');
 
 const VALID_STATUSES = ['success', 'failure', 'blocked'];
 
@@ -90,6 +92,41 @@ function toNumberOrNull(value) {
   return Number.isFinite(n) ? n : null;
 }
 
+function normalizePathOrNull(value) {
+  if (!value) return null;
+  return String(value).replace(/\\/g, '/');
+}
+
+function buildHumanSummary(skill, status, summary) {
+  const baseSkill = skill ? skill.replace(/-/g, ' ') : 'agent run';
+  const cleanSummary = String(summary || '').trim();
+  const outcomePrefix = status === 'failure'
+    ? 'Outcome: The run did not complete successfully.'
+    : status === 'blocked'
+      ? 'Outcome: The run was blocked.'
+      : 'Outcome: The run completed successfully.';
+  const detail = cleanSummary ? ` ${cleanSummary}` : ` ${baseSkill} completed.`;
+
+  let recommendation;
+  if (status === 'failure') {
+    recommendation = 'Recommended next step: inspect the failure, fix the root cause, and rerun the workflow.';
+  } else if (status === 'blocked') {
+    recommendation = 'Recommended next step: unblock the dependency or missing input before retrying.';
+  } else {
+    recommendation = 'Recommended next step: review the outcome and continue to the next workflow step.';
+  }
+
+  return {
+    summary_line: `${outcomePrefix}${detail} ${recommendation}`,
+    detail_summary: cleanSummary || `${baseSkill} finished with status ${status}.`,
+    recommendation: status === 'failure'
+      ? 'Inspect the failure, fix the root cause, and rerun the workflow before relying on this result.'
+      : status === 'blocked'
+        ? 'Resolve the blocker or missing input before retrying the workflow.'
+        : 'Review the outcome and continue to the next workflow step.',
+  };
+}
+
 function main() {
   const {
     skill,
@@ -106,11 +143,15 @@ function main() {
     tokens: tokensArg,
     'tool-uses': toolUsesArg,
     'duration-ms': durationMsArg,
+    'story-spec-path': storySpecPathArg,
+    'playwright-spec-path': playwrightSpecPathArg,
+    'failure-report-path': failureReportPathArg,
+    'skip-refresh': skipRefreshArg,
   } = parseArgs(process.argv.slice(2));
 
   if (!skill || !status || !summary) {
     throw new Error(
-      'Usage: node log-agent-action.js --skill <name> --status <success|failure|blocked> --summary "<one-line>" [--input "<ref>"] [--jira-story-key <KEY>] [--correlation-id <id>] [--event-type <type>] [--event-category <category>] [--workflow-stage "<stage>"] [--actor-name "<name>"] [--actor-id <id>] [--tokens <n>] [--tool-uses <n>] [--duration-ms <n>]'
+      'Usage: node log-agent-action.js --skill <name> --status <success|failure|blocked> --summary "<one-line>" [--input "<ref>"] [--jira-story-key <KEY>] [--correlation-id <id>] [--event-type <type>] [--event-category <category>] [--workflow-stage "<stage>"] [--actor-name "<name>"] [--actor-id <id>] [--tokens <n>] [--tool-uses <n>] [--duration-ms <n>] [--story-spec-path <path>] [--playwright-spec-path <path>] [--failure-report-path <path>]'
     );
   }
   if (!VALID_STATUSES.includes(status)) {
@@ -132,6 +173,8 @@ function main() {
   const eventType =
     eventTypeArg || (status === 'failure' ? 'agent_task_failed' : 'agent_task_completed');
 
+  const humanSummary = buildHumanSummary(skill, status, summary);
+
   const event = {
     event_id: `evt-${dateStamp(now)}-${timeStamp(now)}`,
     correlation_id: correlationId,
@@ -152,6 +195,9 @@ function main() {
     },
     status,
     message: summary,
+    summary_line: humanSummary.summary_line,
+    detail_summary: humanSummary.detail_summary,
+    recommendation: humanSummary.recommendation,
     input_reference: input ? { ref: input } : {},
     usage: {
       total_tokens: toNumberOrNull(tokensArg),
@@ -162,6 +208,16 @@ function main() {
       model_name: 'GitHub Copilot',
       framework_version: 'phase1-operationalization-v1',
       environment: 'dev',
+      human_summary: {
+        summary_line: humanSummary.summary_line,
+        detail_summary: humanSummary.detail_summary,
+        recommendation: humanSummary.recommendation,
+      },
+      score_artifacts: {
+        story_spec_path: normalizePathOrNull(storySpecPathArg),
+        playwright_spec_path: normalizePathOrNull(playwrightSpecPathArg),
+        failure_report_path: normalizePathOrNull(failureReportPathArg),
+      },
     },
   };
 
@@ -199,6 +255,19 @@ function main() {
   fs.mkdirSync(dir, { recursive: true });
   const file = path.join(dir, `${stamp}_${skill}.json`);
   fs.writeFileSync(file, JSON.stringify(event, null, 2), 'utf-8');
+
+  const shouldRefreshScoring = skipRefreshArg === undefined;
+  if (shouldRefreshScoring) {
+    const repoRoot = path.resolve(__dirname, '..', '..');
+    const refresh = spawnSync('node', [path.join(repoRoot, '.github', 'scripts', 'refresh-agent-scoring.js'), '--standalone'], {
+      cwd: repoRoot,
+      stdio: 'inherit',
+      shell: false,
+    });
+    if (refresh.status !== 0) {
+      throw new Error(`Auto-scoring refresh failed with exit code ${refresh.status}`);
+    }
+  }
 
   process.stdout.write(`Logged: ${file}\n`);
 }

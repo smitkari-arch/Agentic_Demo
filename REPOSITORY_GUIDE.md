@@ -49,7 +49,7 @@ The repo also includes guardrails for:
 | [.github/agents](.github/agents) | Agent role definitions and responsibilities |
 | [.github/prompts](.github/prompts) | One-off prompt entry points that invoke specific agents |
 | [.github/skills](.github/skills) | Canonical reusable logic for readiness, test generation, scripting, and failure analysis |
-| [.github/instructions](.github/instructions) | Rules, execution model, security model, RACI matrix, Jira access instructions |
+| [.github/instructions](.github/instructions) | Rules, execution model, security model, Jira access instructions |
 | [.github/hooks](.github/hooks) | Hook-based checks for prompt scanning, Jira access, and RTK output reduction |
 | [.github/pii-ocr](.github/pii-ocr) | PII/redaction logic and OCR-related sanitization rules |
 | [.github/memory](.github/memory) | Approved project knowledge and decision history |
@@ -151,8 +151,6 @@ This directory contains project policy and workflow documentation.
 Important files:
 - [execution-model.instructions.md](.github/instructions/execution-model.instructions.md)
 - [guardrails-policy.instructions.md](.github/instructions/guardrails-policy.instructions.md)
-- [phase1-scope.instructions.md](.github/instructions/phase1-scope.instructions.md)
-- [raci.instructions.md](.github/instructions/raci.instructions.md)
 - [jira-access.instructions.md](.github/instructions/jira-access.instructions.md)
 - [agent-usage-logging.instructions.md](.github/instructions/agent-usage-logging.instructions.md)
 
@@ -216,7 +214,37 @@ This is a shared, governed record of project decisions and context, not a runtim
 
 ---
 
-### 4.9 .github/workflows
+### 4.9 reports
+
+The repository maintains a dedicated reporting layer that turns raw execution and audit logs into decision-ready summaries for QA and workflow review.
+
+The main outputs are:
+
+- [reports/kpi-report.csv](reports/kpi-report.csv)  
+  Stores a time-ordered log of each real Playwright run. Each row includes the run timestamp, total test count, passed/failed/skipped values, duration, and the source JSON path. This is the raw KPI history used to track automation health over time.
+
+- [reports/test-execution-report.html](reports/test-execution-report.html)  
+  Builds a human-readable dashboard from the KPI CSV. It shows total runs, pass/fail summaries, average duration, recent trend, and execution history for quick QA review.
+
+- [reports/agent-quality-report.csv](reports/agent-quality-report.csv)  
+  Aggregates the agent-scoring evidence produced after each agent run. It captures outcome score, confidence score, confidence band, missing metrics, and recommendations for each skill run.
+
+- [reports/agent-quality-trends.csv](reports/agent-quality-trends.csv)  
+  Summarizes agent quality over time by date, skill, and actor. It helps reviewers see whether the planner, designer, scripter, and healer are improving or declining in reliability.
+
+- [reports/agent-execution-report.csv](reports/agent-execution-report.csv)  
+  Records the workflow timeline of agent activity, including start/end status, Jira story key, workflow stage, and summary message for each task. This report explains what the agents actually did, not just how well they scored.
+
+Together, these reports give the repository three layers of evidence:
+- execution health of the Playwright suite
+- quality of the AI-generated work
+- audit trail of the workflow itself
+
+This makes it possible to review automation status, agent performance, and governance compliance without digging through raw logs manually.
+
+---
+
+### 4.10 .github/workflows
 
 This repo contains a GitHub Actions workflow for running Playwright tests automatically.
 
@@ -224,6 +252,108 @@ The main file is:
 - [playwright.yml](.github/workflows/playwright.yml)
 
 It does:
+This gives humans a reviewable chain of evidence.
+
+### Agent scoring and quality metrics (detailed)
+
+This repository includes a deterministic agent-scoring pipeline that converts logged agent actions into per-run evidence, validates schema, and aggregates CSV reports for human review.
+
+- Primary scripts (located in `.github/scripts`):
+   - `generate-agent-quality-evidence.js` — reads `audit/agent-actions/*.json`, inspects linked artifacts, and emits deterministic per-run evidence JSON to `audit/agent-quality/*.score.json`.
+   - `validate-agent-quality-evidence.js` — enforces the evidence schema and required metric keys per-skill.
+   - `generate-agent-quality-report.js` — aggregates evidence files into `reports/agent-quality-report.csv` and `reports/agent-quality-trends.csv`.
+   - `generate-agent-execution-report.js` — writes `reports/agent-execution-report.csv` from raw action logs.
+   - `refresh-agent-scoring.js` — convenience wrapper to run evidence generation, validation, and report production in order.
+   - `log-agent-action.js` — helper used by prompts/agents to write `agent_task_completed`/`agent_task_failed` events to `audit/agent-actions/` and optionally trigger refresh.
+
+- Evidence files:
+   - Location: `audit/agent-quality/`
+   - Naming: `<ISOstamp>_<skill>_<eventId>.score.json`
+   - Each file contains: `score_event_version`, `metric_version`, `source_event` (metadata), `metrics` (per-metric values and weights), `outcome_score`, `confidence_factors`, and `confidence_band`.
+
+- Evidence schema highlights (what `validate-agent-quality-evidence.js` checks):
+   - Top-level required fields: `score_event_version`, `metric_version`, `metrics`, `confidence_factors`, `confidence_band`.
+   - `source_event` must include: `event_id`, `correlation_id`, `event_timestamp`, `skill`, `actor_name`, `actor_id`.
+   - Skill-specific required metric keys (examples):
+      - `jira-story-readiness`: `acceptance_criteria_extraction_coverage`, `requirement_testability_coverage`, `story_clarity_coverage`.
+      - `generate-test-scenarios`: `requirement_coverage`, `acceptance_criteria_coverage`, `scenario_type_coverage`, `test_case_quality_score`, `uniqueness_score`.
+      - `generate-playwright-ui-script`: `script_generation_success_rate`, `syntax_pass_rate`, `framework_compliance_score`, `assertion_quality_score`, `reusability_score`.
+      - `analyze-playwright-failure`: `failure_reproduction_rate`, `healing_success_rate`, `regression_safety_score`, `false_healing_rate`.
+   - Valid `reason_code` values for null metrics: `EXTERNAL_REVIEW_UNAVAILABLE`, `HISTORICAL_BASELINE_UNAVAILABLE`, `ARTIFACT_NOT_FOUND`, `NOT_APPLICABLE`.
+
+### Human-readable scoring enhancement
+
+The scoring pipeline keeps the original deterministic evidence model, but also adds a user-facing summary layer so reviewers do not need to inspect raw JSON to understand the result.
+
+Relevant implementation points:
+- `.github/scripts/generate-agent-quality-evidence.js` adds the readable narrative and metric explanations used to interpret a score.
+- `.github/scripts/log-agent-action.js` adds a concise human summary to each logged agent event and includes the next-step recommendation.
+- `.github/scripts/generate-agent-quality-report.js` exposes the human-readable summary fields in the aggregated CSV output.
+- `.github/scripts/tests/agent-quality-scripts.test.js` validates the summary metadata and report output.
+
+The generated score evidence now includes the following fields in addition to the numeric metrics:
+- `summary_line` — a short explanation designed for chat and quick review.
+- `detail_summary` — a fuller narrative describing evidence strength or missing data.
+- `recommendation` — suggested next action for the user.
+- `primary_reason_code` — the dominant reason why the score was limited or incomplete.
+- `missing_metric_list` — the metrics that were unavailable or incomplete.
+- `metric_explanations` — plain-language descriptions for each metric and why it mattered.
+
+The human summary uses score bands that are easier to interpret than raw numbers alone:
+- Strong result
+- Good overall result
+- Partial result
+- Insufficient evidence
+
+This improves trust, readability, and actionability without replacing the underlying audit trail. Reviewers can quickly tell whether the score is strong, partially supported, or not reliable enough for a final decision.
+
+### Metric models and evidence sources
+
+- Metric definitions live in `generate-agent-quality-evidence.js` under `OUTCOME_MODELS`. For each supported skill the model declares metric keys, labels, and weights.
+- Evidence sources used by the scoring pipeline include:
+   - Story spec markdown under `playwrightTests/specs/` (parsed for TC count, AC references, scenario types, and quality heuristics).
+   - Playwright test files under `playwrightTests/tests/` (scanned for `expect(...)`, Web-first matchers, `page.` locators, forbidden waits, and page-object imports).
+   - Machine-readable Playwright report: `playwrightTests/playwright-report/results.json` (used for `syntax_pass_rate` and validation metrics).
+   - Linked artifacts referenced in `audit/agent-actions` event `additional_details.score_artifacts` fields: `story_spec_path`, `playwright_spec_path`, `failure_report_path`.
+
+- The evidence generator computes per-metric values (or emits null with a reason code), combines them with their configured weights to an `outcome_score`, and computes `confidence_factors` (evidence completeness, validation pass rate, historical accuracy). A `confidence_band` string is derived from the confidence score.
+
+### CSV reports and interpretation
+
+- `reports/agent-quality-report.csv` columns include: `Timestamp, EventId, CorrelationId, Skill, ActorName, ActorId, JiraStoryKey, Status, OutcomeScore, ConfidenceScore, ConfidenceBand, MissingMetricWeight, EvidenceCompleteness, ValidationPassRate, HistoricalAccuracy`.
+- `reports/agent-quality-trends.csv` groups runs by date/skill/actor and shows run counts, average outcome and confidence scores, and counts for confidence-band buckets.
+- `reports/agent-execution-report.csv` is a human-friendly summary including status, workflow stage, summary message, and event metadata without the usage or score columns.
+
+### CI integration and local usage
+
+- The Playwright CI workflow (`.github/workflows/playwright.yml`) runs score evidence generation and validation as post-run steps:
+   - `generate-agent-quality-evidence.js` → `validate-agent-quality-evidence.js` → `generate-agent-quality-report.js`.
+- Run the full refresh locally from the repository root:
+
+```bash
+node .github/scripts/refresh-agent-scoring.js --standalone
+```
+
+- Run steps individually:
+
+```bash
+node .github/scripts/generate-agent-quality-evidence.js
+node .github/scripts/validate-agent-quality-evidence.js
+node .github/scripts/generate-agent-quality-report.js
+node .github/scripts/generate-agent-execution-report.js --standalone
+```
+
+### Logging and auto-refresh
+
+- Use `log-agent-action.js` for structured agent event writes to `audit/agent-actions/`. Events can include `additional_details.score_artifacts` with artifact paths to help scoring.
+- The log helper can trigger `refresh-agent-scoring.js` automatically; pass `--skip-refresh` to avoid automatic refresh when desired.
+
+### Troubleshooting notes
+
+- If validation reports missing metrics, confirm the matching `audit/agent-actions/*.json` includes the expected `score_artifacts` paths or run the relevant agent to generate artifacts.
+- If `playwright-report/results.json` is absent, run `npx playwright test` under `playwrightTests` to produce the machine-readable report used in several metrics.
+
+---
 - checks out code
 - installs Node dependencies
 - installs Playwright browsers
@@ -246,7 +376,6 @@ Key files:
 - [tests](playwrightTests/tests)
 - [specs](playwrightTests/specs)
 - [playwright-report](playwrightTests/playwright-report)
-- [reports](playwrightTests/reports)
 - [test-results](playwrightTests/test-results)
 
 This folder is the core execution path. It contains the real test framework logic.
@@ -467,21 +596,19 @@ This gives humans a reviewable chain of evidence.
 
 ---
 
-## 7. RACI and human ownership
+## 7. Human ownership and workflow gates
 
 The project separates agent work from human accountability.
 
-From [raci.instructions.md](.github/instructions/raci.instructions.md):
+The binding workflow is defined by:
 
-- Planner human / QA owner: owns story readiness
-- Designer Agent: owns scenario generation
-- Scripter Agent: owns Playwright script generation
-- Healer Agent: owns failure analysis and healing recommendation
-- Human / QA owner: owns repo check-in, defect approval, and final signoff
+- [.github/instructions/execution-model.instructions.md](.github/instructions/execution-model.instructions.md)
+- [.github/instructions/guardrails-policy.instructions.md](.github/instructions/guardrails-policy.instructions.md)
 
 Key rule:
 - external writes (Jira, memory, repo changes) are human-triggered
 - local test code under [playwrightTests](playwrightTests) is acceptable as a direct agent action under normal review
+- human signoff remains required for repo actions, defects, and final artifact approval
 
 ---
 
@@ -518,17 +645,26 @@ Before using this repository, make sure you have:
   - `npm ci`
 - Browser installation via:
   - `npx playwright install --with-deps`
+- Jira credentials configured in your environment before attempting any Jira-backed workflow
 
-Optional but common:
-- GitHub Actions or CI environment awareness
-- Jira access environment variables:
-  - `JIRA_BASE_URL`
-  - `JIRA_EMAIL`
-  - `JIRA_API_TOKEN`
+Required for Jira access:
+- `JIRA_BASE_URL` (for example, `https://your-company.atlassian.net`)
+- `JIRA_EMAIL` (your Atlassian account email)
+- `JIRA_API_TOKEN` (API token created in Atlassian)
+
+Example local setup:
+
+```bash
+export JIRA_BASE_URL="https://your-company.atlassian.net"
+export JIRA_EMAIL="you@company.com"
+export JIRA_API_TOKEN="your_api_token_here"
+```
 
 Important:
 - do not store real credentials in repo files
 - always use environment variables or securely managed local settings
+- if any Jira variable is missing, the repo should stop rather than guessing or hardcoding values
+- Jira-backed steps such as story readiness review require these values before they can fetch issue data
 
 ---
 

@@ -6,7 +6,7 @@ argument-hint: '[story_id (example: "KAN-6") | story_path (example: "playwrightT
 
 # Generate Playwright UI Script
 
-Turn a resolved story-scoped test cases such as `KAN-4` into working Playwright specs, page objects, and helpers inside `playwrightTests/`. Playwright only — never Karate, Cypress, or Selenium code. Backs the Playwright Scripter Agent role in [.github/agents/scripter-agent.agent.md](../../agents/scripter-agent.agent.md); see the "Playwright Script Generation" row of [.github/instructions/raci.instructions.md](../../instructions/raci.instructions.md).
+Turn a resolved story-scoped test cases such as `KAN-4` into working Playwright specs, page objects, and helpers inside `playwrightTests/`. Playwright only — never Karate, Cypress, or Selenium code. Backs the Playwright Scripter Agent role in [.github/agents/scripter-agent.agent.md](../../agents/scripter-agent.agent.md) and follows the repo workflow documented in [.github/instructions/execution-model.instructions.md](../../instructions/execution-model.instructions.md).
 
 ## Access & tool scope
 - **Invoke by:** automation engineers who own `playwrightTests/` — this skill writes files and runs `npx playwright test`, not for casual/read-only use.
@@ -21,7 +21,7 @@ Turn a resolved story-scoped test cases such as `KAN-4` into working Playwright 
 - Target app URL (optional) — if omitted, fall back to `playwright.config.ts` `baseURL`.
 - Confirm `playwrightTests/` already exists at repo root before starting — reuse its `playwright.config.ts` and project structure, never create a second Playwright project.
 
-If a selector is provided in the form `story_key:test_case_id`, generate only that single test scenario/spec. If a bare `TC-01` is supplied and more than one story contains that ID, stop and ask for the story key instead of guessing.
+If a selector is provided in the form `story_key:test_case_id`, generate only that single test scenario/spec. If the input is a story ID or a story path and the resolved markdown contains multiple `TC-*` sections, generate one Playwright scenario per test case found in that story. Do not silently pick the first happy-path case. If a bare `TC-01` is supplied and more than one story contains that ID, stop and ask for the story key instead of guessing.
 
 ### Story-id resolution rules
 - `resolveStoryPath({story_id, story_path})` precedence:
@@ -124,14 +124,15 @@ Match this style:
 5. **Form fields with delayed updates**: if typing triggers async validation or upstream state changes, wait for the expected state before asserting.
 
 ## Process
-1. Resolve the provided input to a story markdown and the target test-case (use `resolveStoryPath` when a `story_id` or `story_path` is provided).
-2. Group steps by page/screen → one page object per screen.
-3. Write one test spec per story or test area, with one scenario for the resolved test case.
-4. **PII gate — run immediately after writing/editing any Playwright spec file, before anything else**: if a new file contains user personal data, stop and report it rather than running tests.
-5. Reuse the existing `pages/` and `tests/` organization; do not create a duplicate Playwright structure.
-6. **Run `npx playwright test` for real** and fix failures using the actual error output — never declare done without executing it.
-7. Treat this skill as script-generation only: do not create a final review package, approval artifact, or analyst-style signoff as part of the execution flow.
-8. Log this run: `node .github/scripts/log-agent-action.js --skill generate-playwright-ui-script --status <success|failure|blocked> --summary "1 scenario scripted, npx playwright test <passed|failed>, OR PII detected and write blocked" --jira-story-key <story key>` (omit `--jira-story-key` if the selector was not tied to a story).
+1. Resolve the provided input to a story markdown and the target test-case(s) (use `resolveStoryPath` when a `story_id` or `story_path` is provided).
+2. If the result is a story ID or story path, parse all `### TC-*` sections in the markdown and generate a scenario for each discovered case. This is the default for story-level input; do not auto-truncate to the first happy-path case.
+3. Group steps by page/screen → one page object per screen.
+4. Write one story-level Playwright spec containing one `test()` block per discovered story case, unless a single-case selector is explicitly supplied.
+5. **PII gate — run immediately after writing/editing any Playwright spec file, before anything else**: if a new file contains user personal data, stop and report it rather than running tests.
+6. Reuse the existing `pages/` and `tests/` organization; do not create a duplicate Playwright structure.
+7. **Run `npx playwright test` for real** and fix failures using the actual error output — never declare done without executing it.
+8. Treat this skill as script-generation only: do not create a final review package, approval artifact, or analyst-style signoff as part of the execution flow.
+9. Log this run: `node .github/scripts/log-agent-action.js --skill generate-playwright-ui-script --status <success|failure|blocked> --summary "<N> scenarios scripted for <story key>, npx playwright test <passed|failed>, OR PII detected and write blocked" --jira-story-key <story key>` (omit `--jira-story-key` if the selector was not tied to a story).
 
 ## Checklist before finishing
 - [ ] Imports `test` and `expect` from `fixtures/base.ts` (not `@playwright/test`)
@@ -140,7 +141,8 @@ Match this style:
 - [ ] No `page.waitForTimeout` or `waitForSelector` usage
 - [ ] At least one meaningful assertion in the test
 - [ ] Tag applied to the test title (e.g., `@smoke`, `@kan-6`)
-- [ ] The selected story-scoped test case has exactly one scenario
+- [ ] For a story ID or story path, every discovered `TC-*` case in the story has a corresponding scenario
+- [ ] When a single-case selector is supplied, only that target case is scripted
 - [ ] Every page object uses stable, verified selectors
 - [ ] Page actions wait for the right UI state before interaction
 - [ ] No duplicate Playwright spec files created for a page that already has one

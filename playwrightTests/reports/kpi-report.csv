@@ -1,2 +1,0 @@
-Timestamp,Framework,Suite,Total,Passed,Failed,Skipped,DurationSec,SourceReportPath,AgentRuns
-2026-09-10T12:41:08.044Z,playwright,sample-playwright-report.json,2,2,0,0,9.067983,sample-playwright-report.json,

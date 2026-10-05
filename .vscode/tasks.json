@@ -1,0 +1,21 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "create-kan-6-spec-dir",
+			"type": "shell",
+			"command": "New-Item -ItemType Directory -Force -Path playwrightTests/specs/KAN-6 | Out-Null",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "touch-kan-6-spec",
+			"type": "shell",
+			"command": "New-Item -ItemType File -Force -Path playwrightTests/specs/KAN-6/verify-navigation-to-the-registration-page.md | Out-Null",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		}
+	]
+}

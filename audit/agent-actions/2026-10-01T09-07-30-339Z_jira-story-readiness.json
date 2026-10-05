@@ -1,0 +1,45 @@
+{
+  "event_id": "evt-20261001-090730339",
+  "correlation_id": "KAN-7-run-20261001",
+  "jira_story_key": "KAN-7",
+  "event_timestamp": "2026-10-01T09:07:30.339Z",
+  "event_type": "agent_task_completed",
+  "event_category": "planning",
+  "workflow_stage": "Story Readiness Review",
+  "actor": {
+    "actor_type": "agent",
+    "actor_name": "Planner Agent",
+    "actor_id": "agent.planner.v1"
+  },
+  "source": {
+    "source_system": "GitHub Copilot IDE",
+    "source_component": "agent-runtime",
+    "source_reference_id": null
+  },
+  "status": "success",
+  "message": "Verdict: Ready for KAN-7",
+  "summary_line": "Outcome: The run completed successfully. Verdict: Ready for KAN-7 Recommended next step: review the outcome and continue to the next workflow step.",
+  "detail_summary": "Verdict: Ready for KAN-7",
+  "recommendation": "Review the outcome and continue to the next workflow step.",
+  "input_reference": {},
+  "usage": {
+    "total_tokens": null,
+    "tool_uses": null,
+    "duration_ms": null
+  },
+  "additional_details": {
+    "model_name": "GitHub Copilot",
+    "framework_version": "phase1-operationalization-v1",
+    "environment": "dev",
+    "human_summary": {
+      "summary_line": "Outcome: The run completed successfully. Verdict: Ready for KAN-7 Recommended next step: review the outcome and continue to the next workflow step.",
+      "detail_summary": "Verdict: Ready for KAN-7",
+      "recommendation": "Review the outcome and continue to the next workflow step."
+    },
+    "score_artifacts": {
+      "story_spec_path": null,
+      "playwright_spec_path": null,
+      "failure_report_path": null
+    }
+  }
+}

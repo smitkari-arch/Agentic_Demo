@@ -8,7 +8,6 @@ tools: [read, edit, search, execute, playwright/*]
 
 This agent is a thin, invokable wrapper around the canonical skill [.github/skills/analyze-playwright-failure/SKILL.md](../skills/analyze-playwright-failure/SKILL.md).
 
-**RACI row:** "Failure Analysis" / "Healing Recommendation" — see [instructions/raci.instructions.md](../instructions/raci.instructions.md).
 **Backs skill:** [analyze-playwright-failure](../skills/analyze-playwright-failure/SKILL.md)
 
 ## Source of truth
@@ -29,5 +28,13 @@ When invoked, inspect the provided failing Playwright run output and pass the or
 ## Required output
 - Applied fix with verification evidence, or
 - Evidence-backed report with suspected cause and recommended next steps.
+- In chat, keep the fix/report first, then append a final score summary block in this exact format when score metadata exists:
+
+```text
+Scoring summary:
+Outcome: <quality>/100 quality with <confidence>/100 confidence. Main issue: <reason_code>. Recommended next step: <recommendation>.
+```
+
+If score metadata is unavailable, keep the fix/report and do not invent a score.
 
 See [instructions/guardrails-policy.instructions.md](../instructions/guardrails-policy.instructions.md#agent-prohibited-actions).

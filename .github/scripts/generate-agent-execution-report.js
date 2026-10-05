@@ -32,7 +32,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const CSV_HEADER = 'Timestamp,Skill,ActorName,JiraStoryKey,Status,WorkflowStage,Summary,Tokens,ToolUses,DurationMs,EventId';
+const CSV_HEADER = 'Timestamp,Skill,ActorName,ActorId,JiraStoryKey,CorrelationId,Status,WorkflowStage,Summary,EventId';
 
 function csvField(value) {
   const str = value === null || value === undefined ? '' : String(value);
@@ -128,29 +128,24 @@ function pairUsageEvents(events, standaloneMode = false) {
 }
 
 function buildRows(completions) {
-  return completions.map((e) => {
-    const usage = e._usage || e.usage || {};
-    return [
-      e.event_timestamp,
-      e._skill,
-      (e.actor && e.actor.actor_name) || '',
-      e.jira_story_key || '',
-      e.status || '',
-      e.workflow_stage || '',
-      e.message || '',
-      usage.total_tokens ?? '',
-      usage.tool_uses ?? '',
-      usage.duration_ms ?? '',
-      e.event_id || '',
-    ];
-  });
+  return completions.map((e) => [
+    e.event_timestamp,
+    e._skill,
+    (e.actor && e.actor.actor_name) || '',
+    (e.actor && e.actor.actor_id) || '',
+    e.jira_story_key || '',
+    e.correlation_id || '',
+    e.status || '',
+    e.workflow_stage || '',
+    e.message || '',
+    e.event_id || '',
+  ]);
 }
 
 function main() {
   const standaloneMode = process.argv.includes('--standalone');
   const root = process.cwd();
   const events = loadEvents(path.join(root, 'audit', 'agent-actions'));
-
   if (events.length === 0) {
     process.stdout.write('No agent-action events found in audit/agent-actions/. Nothing written.\n');
     return;
@@ -163,7 +158,6 @@ function main() {
   }
 
   const rows = buildRows(completions);
-  const missingUsage = completions.filter((e) => !e._usage).length;
 
   const csvPath = path.join(root, 'reports', 'agent-execution-report.csv');
   fs.mkdirSync(path.dirname(csvPath), { recursive: true });
@@ -171,7 +165,7 @@ function main() {
   fs.writeFileSync(csvPath, lines.join('\n') + '\n', 'utf-8');
 
   process.stdout.write(
-    `Wrote ${rows.length} row(s) to ${path.relative(root, csvPath)} (${missingUsage} with no matched usage event — blank token/duration fields, not guessed)${standaloneMode ? ' [standalone mode]' : ''}.\n`
+    `Wrote ${rows.length} row(s) to ${path.relative(root, csvPath)}${standaloneMode ? ' [standalone mode]' : ''}.\n`
   );
 }
 

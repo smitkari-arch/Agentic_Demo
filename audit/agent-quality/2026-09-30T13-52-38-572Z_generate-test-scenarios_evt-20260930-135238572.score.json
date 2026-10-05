@@ -1,0 +1,151 @@
+{
+  "score_event_version": "v2",
+  "generated_at": "2026-10-01T10:14:11.217Z",
+  "source_event": {
+    "event_id": "evt-20260930-135238572",
+    "correlation_id": "KAN-2-run-20260930",
+    "jira_story_key": "KAN-2",
+    "skill": "generate-test-scenarios",
+    "actor_name": "Designer Agent",
+    "actor_id": "agent.designer.v1",
+    "status": "blocked",
+    "event_timestamp": "2026-09-30T13:52:38.572Z",
+    "workflow_stage": "Test Scenario Generation",
+    "message": "Blocked: KAN-2 is not ready for test design because it lacks acceptance criteria and testable behavioral detail.",
+    "source_file": "audit/agent-actions/2026-09-30T13-52-38-572Z_generate-test-scenarios.json"
+  },
+  "metric_version": "v2",
+  "outcome_score": 33.5,
+  "confidence_score": 72.91,
+  "confidence_band": "Low confidence",
+  "summary_line": "Partial result. The generate test scenarios scored 33.50/100 quality with 72.91/100 confidence. The output was created, but validation quality was limited. The output was created, but key evidence is missing or validation was limited.",
+  "detail_summary": "This run was produced successfully, but the evidence did not fully support a higher confidence level.",
+  "recommendation": "Collect the missing evidence or rerun the workflow before relying on this score.",
+  "primary_reason_code": "NOT_APPLICABLE",
+  "missing_metric_list": [],
+  "metric_explanations": [
+    {
+      "key": "requirement_coverage",
+      "label": "Requirement Coverage",
+      "value": 35,
+      "reason_code": null,
+      "explanation": "This metric scored 35/100 and contributed limited support to the overall outcome score of 34/100 and confidence score of 73/100."
+    },
+    {
+      "key": "acceptance_criteria_coverage",
+      "label": "Acceptance Criteria Coverage",
+      "value": 35,
+      "reason_code": null,
+      "explanation": "This metric scored 35/100 and contributed limited support to the overall outcome score of 34/100 and confidence score of 73/100."
+    },
+    {
+      "key": "scenario_type_coverage",
+      "label": "Scenario Type Coverage",
+      "value": 30,
+      "reason_code": null,
+      "explanation": "This metric scored 30/100 and contributed limited support to the overall outcome score of 34/100 and confidence score of 73/100."
+    },
+    {
+      "key": "test_case_quality_score",
+      "label": "Test Case Quality Score",
+      "value": 30,
+      "reason_code": null,
+      "explanation": "This metric scored 30/100 and contributed limited support to the overall outcome score of 34/100 and confidence score of 73/100."
+    },
+    {
+      "key": "uniqueness_score",
+      "label": "Uniqueness Score",
+      "value": 40,
+      "reason_code": null,
+      "explanation": "This metric scored 40/100 and contributed limited support to the overall outcome score of 34/100 and confidence score of 73/100."
+    }
+  ],
+  "outcome_weights": {
+    "active_weight": 1,
+    "total_weight": 1,
+    "missing_weight": 0
+  },
+  "metrics": [
+    {
+      "key": "requirement_coverage",
+      "label": "Requirement Coverage",
+      "weight": 0.25,
+      "value": 35,
+      "raw_inputs": {
+        "status": "blocked",
+        "inferred_test_case_count": 2
+      }
+    },
+    {
+      "key": "acceptance_criteria_coverage",
+      "label": "Acceptance Criteria Coverage",
+      "weight": 0.25,
+      "value": 35,
+      "raw_inputs": {
+        "status": "blocked",
+        "inferred_test_case_count": 2
+      }
+    },
+    {
+      "key": "scenario_type_coverage",
+      "label": "Scenario Type Coverage",
+      "weight": 0.2,
+      "value": 30,
+      "raw_inputs": {
+        "status": "blocked",
+        "inferred_test_case_count": 2
+      }
+    },
+    {
+      "key": "test_case_quality_score",
+      "label": "Test Case Quality Score",
+      "weight": 0.2,
+      "value": 30,
+      "raw_inputs": {
+        "status": "blocked",
+        "inferred_test_case_count": 2
+      }
+    },
+    {
+      "key": "uniqueness_score",
+      "label": "Uniqueness Score",
+      "weight": 0.1,
+      "value": 40,
+      "raw_inputs": {
+        "status": "blocked",
+        "note": "Duplicate detection corpus not integrated; using conservative default."
+      }
+    }
+  ],
+  "confidence_factors": [
+    {
+      "key": "evidence_completeness",
+      "label": "Evidence Completeness",
+      "weight": 0.4,
+      "value": 100,
+      "raw_inputs": {
+        "active_weight": 1,
+        "total_weight": 1,
+        "missing_weight": 0
+      }
+    },
+    {
+      "key": "validation_pass_rate",
+      "label": "Validation Pass Rate",
+      "weight": 0.35,
+      "value": 30,
+      "raw_inputs": {
+        "status": "blocked"
+      }
+    },
+    {
+      "key": "historical_accuracy",
+      "label": "Historical Accuracy",
+      "weight": 0.25,
+      "value": 89.64,
+      "raw_inputs": {
+        "sample_size": 2
+      }
+    }
+  ]
+}

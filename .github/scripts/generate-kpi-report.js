@@ -4,8 +4,9 @@
 // Playwright source: pass --playwright-json <path> pointing at output from `npx playwright test --reporter=json`.
 // The default HTML reporter in playwright.config.ts does not produce a single machine-readable summary file.
 //
-// AgentRuns column: optional. Pass --jira-story-key <KEY> to populate it — counts real agent runs from
-// audit/agent-actions/*.json whose jira_story_key matches, correlating the audit log with this reporting CSV.
+// AgentRuns column: optional in older CSVs. Pass --jira-story-key <KEY> to print counts to stdout —
+// counts real agent runs from audit/agent-actions/*.json whose jira_story_key matches. This value
+// is no longer written to the CSV file; the script will still print counts for diagnostics.
 //
 // Usage:
 //   node .github/scripts/generate-kpi-report.js [--playwright-json <path>] [--jira-story-key <KEY>]
@@ -14,7 +15,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const CSV_HEADER = 'Timestamp,Framework,Suite,Total,Passed,Failed,Skipped,DurationSec,SourceReportPath,AgentRuns';
+const CSV_HEADER = 'Timestamp,Framework,Suite,Total,Passed,Failed,Skipped,DurationSec,SourceReportPath';
 
 function parseArgs(argv) {
   const args = {};
@@ -38,7 +39,7 @@ function extractAttr(tag, attr) {
   return match ? match[1] : undefined;
 }
 
-function parsePlaywrightJson(jsonPath) {
+function parsePlaywrightJson(jsonPath, rootDir) {
   const report = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
   const stats = report.stats || {};
   const durationSec = typeof stats.duration === 'number' ? stats.duration / 1000 : 0;
@@ -57,7 +58,7 @@ function parsePlaywrightJson(jsonPath) {
       failed: unexpected,
       skipped,
       durationSec,
-      sourceReportPath: path.relative(process.cwd(), jsonPath),
+      sourceReportPath: path.relative(rootDir, jsonPath),
     },
   ];
 }
@@ -98,7 +99,7 @@ function countAgentRuns(root, storyKey) {
   return { count, breakdown };
 }
 
-function appendRows(rows, csvPath, agentRuns) {
+function appendRows(rows, csvPath) {
   const isNewFile = !fs.existsSync(csvPath);
   fs.mkdirSync(path.dirname(csvPath), { recursive: true });
 
@@ -107,9 +108,8 @@ function appendRows(rows, csvPath, agentRuns) {
   }
 
   const timestamp = new Date().toISOString();
-  const agentRunsField = agentRuns === null ? '' : agentRuns;
   const lines = rows.map((r) =>
-    [timestamp, r.framework, r.suite, r.total, r.passed, r.failed, r.skipped, r.durationSec, r.sourceReportPath, agentRunsField]
+    [timestamp, r.framework, r.suite, r.total, r.passed, r.failed, r.skipped, r.durationSec, r.sourceReportPath]
       .map(csvField)
       .join(',')
   );
@@ -120,14 +120,14 @@ function appendRows(rows, csvPath, agentRuns) {
 
 function main() {
   const { 'playwright-json': playwrightJsonPath, 'jira-story-key': jiraStoryKey } = parseArgs(process.argv.slice(2));
-  const root = process.cwd();
+  const root = path.resolve(__dirname, '..', '..');
   const rows = [];
 
   if (playwrightJsonPath) {
     if (!fs.existsSync(playwrightJsonPath)) {
       throw new Error(`--playwright-json path does not exist: ${playwrightJsonPath}`);
     }
-    rows.push(...parsePlaywrightJson(playwrightJsonPath));
+    rows.push(...parsePlaywrightJson(playwrightJsonPath, root));
   }
 
   if (rows.length === 0) {
@@ -135,10 +135,8 @@ function main() {
     return;
   }
 
-  let agentRuns = null;
   if (jiraStoryKey) {
     const { count, breakdown } = countAgentRuns(root, jiraStoryKey);
-    agentRuns = count;
     const breakdownStr = Object.entries(breakdown)
       .map(([actor, n]) => `${actor} x${n}`)
       .join(', ');
@@ -146,7 +144,7 @@ function main() {
   }
 
   const csvPath = path.join(root, 'reports', 'kpi-report.csv');
-  const count = appendRows(rows, csvPath, agentRuns);
+  const count = appendRows(rows, csvPath);
   process.stdout.write(`Appended ${count} row(s) to ${path.relative(root, csvPath)}\n`);
 }
 

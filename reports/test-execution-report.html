@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Execution Report</title>
+    <style>
+      :root {
+        --bg: #f4f7fb;
+        --card: #ffffff;
+        --text: #18212f;
+        --muted: #5d6b82;
+        --line: #dfe7f3;
+        --primary: #2563eb;
+        --success: #16a34a;
+        --warning: #f59e0b;
+        --danger: #dc2626;
+        --shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+      .container {
+        max-width: 1200px;
+        margin: 32px auto;
+        padding: 0 20px 40px;
+      }
+      .header {
+        background: linear-gradient(135deg, #0f172a, #1d4ed8);
+        color: white;
+        padding: 28px 32px;
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        margin-bottom: 24px;
+      }
+      .header h1 { margin: 0; font-size: clamp(1.8rem, 2vw, 2.6rem); }
+      .header p { margin: 10px 0 0; opacity: 0.9; }
+      .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 18px;
+        margin-bottom: 24px;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        box-shadow: var(--shadow);
+        padding: 18px 20px;
+      }
+      .metric-label {
+        font-size: 0.8rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      .metric-value {
+        margin-top: 12px;
+        font-size: clamp(1.6rem, 2vw, 2.3rem);
+        font-weight: 700;
+      }
+      .metric-sub { margin-top: 8px; font-size: 0.92rem; color: var(--muted); }
+      .success { color: var(--success); }
+      .danger { color: var(--danger); }
+      .primary { color: var(--primary); }
+      .warning { color: var(--warning); }
+      .section {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+        padding: 24px;
+        margin-top: 20px;
+      }
+      .section h2 { margin: 0 0 18px; font-size: 1.2rem; }
+      .trend-list { display: grid; gap: 16px; }
+      .trend-item {
+        display: grid;
+        grid-template-columns: 120px 1fr 70px;
+        align-items: center;
+        gap: 12px;
+      }
+      .trend-item .time { color: var(--muted); font-size: 0.9rem; }
+      .progress {
+        position: relative;
+        background: #edf2fb;
+        border-radius: 999px;
+        height: 12px;
+        overflow: hidden;
+      }
+      .progress-bar { height: 100%; border-radius: 999px; }
+      .pass { background: linear-gradient(90deg, var(--success), #4ade80); }
+      .fail { background: linear-gradient(90deg, var(--danger), #f87171); }
+      .count { text-align: right; font-weight: 600; }
+      table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+      th, td {
+        padding: 12px 10px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        font-size: 0.96rem;
+      }
+      th {
+        color: var(--muted);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .status-badge {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.8rem;
+      }
+      .status-pass { background: rgba(22, 163, 74, 0.12); color: var(--success); }
+      .status-fail { background: rgba(220, 38, 38, 0.12); color: var(--danger); }
+      @media (max-width: 760px) {
+        .trend-item { grid-template-columns: 1fr; }
+        .trend-item .time, .count { text-align: left; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Test Execution Report</h1>
+        <p>Quality summary for automated regression runs</p>
+      </header>
+
+      <section class="summary-grid">
+        <div class="card">
+          <div class="metric-label">Total runs</div>
+          <div class="metric-value primary">16</div>
+          <div class="metric-sub">Execution snapshots</div>
+        </div>
+        <div class="card">
+          <div class="metric-label">Passed</div>
+          <div class="metric-value success">87</div>
+          <div class="metric-sub">92.6% pass rate</div>
+        </div>
+        <div class="card">
+          <div class="metric-label">Failed</div>
+          <div class="metric-value danger">7</div>
+          <div class="metric-sub">7.4% fail rate</div>
+        </div>
+        <div class="card">
+          <div class="metric-label">Avg duration</div>
+          <div class="metric-value warning">26.11s</div>
+          <div class="metric-sub">Per run average</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Recent trend</h2>
+        <div class="trend-list">
+      <div class="trend-item">
+        <div class="time">10/1/2026, 4:21:17 PM</div>
+        <div>
+          <div class="progress">
+            <div class="progress-bar pass" style="width: 100%;"></div>
+            <div class="progress-bar fail" style="width: 0%; margin-top: -12px;"></div>
+          </div>
+        </div>
+        <div class="count">8/8</div>
+      </div>
+    
+      <div class="trend-item">
+        <div class="time">10/1/2026, 4:19:16 PM</div>
+        <div>
+          <div class="progress">
+            <div class="progress-bar pass" style="width: 100%;"></div>
+            <div class="progress-bar fail" style="width: 0%; margin-top: -12px;"></div>
+          </div>
+        </div>
+        <div class="count">2/2</div>
+      </div>
+    
+      <div class="trend-item">
+        <div class="time">10/1/2026, 4:15:39 PM</div>
+        <div>
+          <div class="progress">
+            <div class="progress-bar pass" style="width: 100%;"></div>
+            <div class="progress-bar fail" style="width: 0%; margin-top: -12px;"></div>
+          </div>
+        </div>
+        <div class="count">2/2</div>
+      </div>
+    
+      <div class="trend-item">
+        <div class="time">10/1/2026, 4:14:55 PM</div>
+        <div>
+          <div class="progress">
+            <div class="progress-bar pass" style="width: 100%;"></div>
+            <div class="progress-bar fail" style="width: 0%; margin-top: -12px;"></div>
+          </div>
+        </div>
+        <div class="count">2/2</div>
+      </div>
+    
+      <div class="trend-item">
+        <div class="time">10/1/2026, 4:12:55 PM</div>
+        <div>
+          <div class="progress">
+            <div class="progress-bar pass" style="width: 100%;"></div>
+            <div class="progress-bar fail" style="width: 0%; margin-top: -12px;"></div>
+          </div>
+        </div>
+        <div class="count">8/8</div>
+      </div>
+    
+      <div class="trend-item">
+        <div class="time">10/1/2026, 4:02:35 PM</div>
+        <div>
+          <div class="progress">
+            <div class="progress-bar pass" style="width: 100%;"></div>
+            <div class="progress-bar fail" style="width: 0%; margin-top: -12px;"></div>
+          </div>
+        </div>
+        <div class="count">8/8</div>
+      </div>
+    
+      <div class="trend-item">
+        <div class="time">10/1/2026, 3:53:24 PM</div>
+        <div>
+          <div class="progress">
+            <div class="progress-bar pass" style="width: 87.5%;"></div>
+            <div class="progress-bar fail" style="width: 12.5%; margin-top: -12px;"></div>
+          </div>
+        </div>
+        <div class="count">7/8</div>
+      </div>
+    
+      <div class="trend-item">
+        <div class="time">10/1/2026, 3:43:29 PM</div>
+        <div>
+          <div class="progress">
+            <div class="progress-bar pass" style="width: 87.5%;"></div>
+            <div class="progress-bar fail" style="width: 12.5%; margin-top: -12px;"></div>
+          </div>
+        </div>
+        <div class="count">7/8</div>
+      </div>
+    
+      <div class="trend-item">
+        <div class="time">10/1/2026, 3:41:33 PM</div>
+        <div>
+          <div class="progress">
+            <div class="progress-bar pass" style="width: 100%;"></div>
+            <div class="progress-bar fail" style="width: 0%; margin-top: -12px;"></div>
+          </div>
+        </div>
+        <div class="count">8/8</div>
+      </div>
+    
+      <div class="trend-item">
+        <div class="time">10/1/2026, 3:39:18 PM</div>
+        <div>
+          <div class="progress">
+            <div class="progress-bar pass" style="width: 83.33333333333334%;"></div>
+            <div class="progress-bar fail" style="width: 16.666666666666664%; margin-top: -12px;"></div>
+          </div>
+        </div>
+        <div class="count">5/6</div>
+      </div>
+    
+      <div class="trend-item">
+        <div class="time">10/1/2026, 3:33:01 PM</div>
+        <div>
+          <div class="progress">
+            <div class="progress-bar pass" style="width: 83.33333333333334%;"></div>
+            <div class="progress-bar fail" style="width: 16.666666666666664%; margin-top: -12px;"></div>
+          </div>
+        </div>
+        <div class="count">5/6</div>
+      </div>
+    
+      <div class="trend-item">
+        <div class="time">9/30/2026, 6:38:15 PM</div>
+        <div>
+          <div class="progress">
+            <div class="progress-bar pass" style="width: 83.33333333333334%;"></div>
+            <div class="progress-bar fail" style="width: 16.666666666666664%; margin-top: -12px;"></div>
+          </div>
+        </div>
+        <div class="count">5/6</div>
+      </div>
+    
+      <div class="trend-item">
+        <div class="time">9/30/2026, 6:37:39 PM</div>
+        <div>
+          <div class="progress">
+            <div class="progress-bar pass" style="width: 83.33333333333334%;"></div>
+            <div class="progress-bar fail" style="width: 16.666666666666664%; margin-top: -12px;"></div>
+          </div>
+        </div>
+        <div class="count">5/6</div>
+      </div>
+    
+      <div class="trend-item">
+        <div class="time">9/30/2026, 6:37:04 PM</div>
+        <div>
+          <div class="progress">
+            <div class="progress-bar pass" style="width: 83.33333333333334%;"></div>
+            <div class="progress-bar fail" style="width: 16.666666666666664%; margin-top: -12px;"></div>
+          </div>
+        </div>
+        <div class="count">5/6</div>
+      </div>
+    
+      <div class="trend-item">
+        <div class="time">9/30/2026, 6:35:43 PM</div>
+        <div>
+          <div class="progress">
+            <div class="progress-bar pass" style="width: 100%;"></div>
+            <div class="progress-bar fail" style="width: 0%; margin-top: -12px;"></div>
+          </div>
+        </div>
+        <div class="count">5/5</div>
+      </div>
+    
+      <div class="trend-item">
+        <div class="time">9/30/2026, 6:30:14 PM</div>
+        <div>
+          <div class="progress">
+            <div class="progress-bar pass" style="width: 100%;"></div>
+            <div class="progress-bar fail" style="width: 0%; margin-top: -12px;"></div>
+          </div>
+        </div>
+        <div class="count">5/5</div>
+      </div>
+    </div>
+      </section>
+
+      <section class="section">
+        <h2>Execution history</h2>
+        <div style="margin-bottom: 12px; color: var(--muted);">Latest run: Passing — 8/8 passed in 26.541369s</div>
+        <table>
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>Suite</th>
+              <th>Total</th>
+              <th>Passed</th>
+              <th>Failed</th>
+              <th>Skipped</th>
+              <th>Duration (s)</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+      <tr>
+        <td>10/1/2026, 4:21:17 PM</td>
+        <td>results.json</td>
+        <td>8</td>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>26.541369</td>
+        <td><span class="status-badge status-pass">Passing</span></td>
+      </tr>
+    
+      <tr>
+        <td>10/1/2026, 4:19:16 PM</td>
+        <td>results.json</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>7.831830999999999</td>
+        <td><span class="status-badge status-pass">Passing</span></td>
+      </tr>
+    
+      <tr>
+        <td>10/1/2026, 4:15:39 PM</td>
+        <td>results.json</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>8.179365</td>
+        <td><span class="status-badge status-pass">Passing</span></td>
+      </tr>
+    
+      <tr>
+        <td>10/1/2026, 4:14:55 PM</td>
+        <td>results.json</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>8.664005999999999</td>
+        <td><span class="status-badge status-pass">Passing</span></td>
+      </tr>
+    
+      <tr>
+        <td>10/1/2026, 4:12:55 PM</td>
+        <td>results.json</td>
+        <td>8</td>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>25.359128</td>
+        <td><span class="status-badge status-pass">Passing</span></td>
+      </tr>
+    
+      <tr>
+        <td>10/1/2026, 4:02:35 PM</td>
+        <td>results.json</td>
+        <td>8</td>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>25.960369</td>
+        <td><span class="status-badge status-pass">Passing</span></td>
+      </tr>
+    
+      <tr>
+        <td>10/1/2026, 3:53:24 PM</td>
+        <td>results.json</td>
+        <td>8</td>
+        <td>7</td>
+        <td>1</td>
+        <td>0</td>
+        <td>28.680066</td>
+        <td><span class="status-badge status-fail">Failing</span></td>
+      </tr>
+    
+      <tr>
+        <td>10/1/2026, 3:43:29 PM</td>
+        <td>results.json</td>
+        <td>8</td>
+        <td>7</td>
+        <td>1</td>
+        <td>0</td>
+        <td>28.680066</td>
+        <td><span class="status-badge status-fail">Failing</span></td>
+      </tr>
+    
+      <tr>
+        <td>10/1/2026, 3:41:33 PM</td>
+        <td>results.json</td>
+        <td>8</td>
+        <td>8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>78.881878</td>
+        <td><span class="status-badge status-pass">Passing</span></td>
+      </tr>
+    
+      <tr>
+        <td>10/1/2026, 3:39:18 PM</td>
+        <td>results.json</td>
+        <td>6</td>
+        <td>5</td>
+        <td>1</td>
+        <td>0</td>
+        <td>25.867573</td>
+        <td><span class="status-badge status-fail">Failing</span></td>
+      </tr>
+    
+      <tr>
+        <td>10/1/2026, 3:33:01 PM</td>
+        <td>results.json</td>
+        <td>6</td>
+        <td>5</td>
+        <td>1</td>
+        <td>0</td>
+        <td>25.867573</td>
+        <td><span class="status-badge status-fail">Failing</span></td>
+      </tr>
+    
+      <tr>
+        <td>9/30/2026, 6:38:15 PM</td>
+        <td>results.json</td>
+        <td>6</td>
+        <td>5</td>
+        <td>1</td>
+        <td>0</td>
+        <td>25.867573</td>
+        <td><span class="status-badge status-fail">Failing</span></td>
+      </tr>
+    
+      <tr>
+        <td>9/30/2026, 6:37:39 PM</td>
+        <td>results.json</td>
+        <td>6</td>
+        <td>5</td>
+        <td>1</td>
+        <td>0</td>
+        <td>25.867573</td>
+        <td><span class="status-badge status-fail">Failing</span></td>
+      </tr>
+    
+      <tr>
+        <td>9/30/2026, 6:37:04 PM</td>
+        <td>results.json</td>
+        <td>6</td>
+        <td>5</td>
+        <td>1</td>
+        <td>0</td>
+        <td>25.867573</td>
+        <td><span class="status-badge status-fail">Failing</span></td>
+      </tr>
+    
+      <tr>
+        <td>9/30/2026, 6:35:43 PM</td>
+        <td>results.json</td>
+        <td>5</td>
+        <td>5</td>
+        <td>0</td>
+        <td>0</td>
+        <td>24.799948</td>
+        <td><span class="status-badge status-pass">Passing</span></td>
+      </tr>
+    
+      <tr>
+        <td>9/30/2026, 6:30:14 PM</td>
+        <td>results.json</td>
+        <td>5</td>
+        <td>5</td>
+        <td>0</td>
+        <td>0</td>
+        <td>24.799948</td>
+        <td><span class="status-badge status-pass">Passing</span></td>
+      </tr>
+    </tbody>
+        </table>
+      </section>
+    </div>
+  </body>
+</html>

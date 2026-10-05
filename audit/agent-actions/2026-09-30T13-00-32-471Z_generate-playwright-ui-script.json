@@ -1,0 +1,45 @@
+{
+  "event_id": "evt-20260930-130032471",
+  "correlation_id": "KAN-8-run-20260930",
+  "jira_story_key": "KAN-8",
+  "event_timestamp": "2026-09-30T13:00:32.471Z",
+  "event_type": "agent_task_completed",
+  "event_category": "scripting",
+  "workflow_stage": "Script Generation (UI)",
+  "actor": {
+    "actor_type": "agent",
+    "actor_name": "Scripter Agent",
+    "actor_id": "agent.scripter.v1"
+  },
+  "source": {
+    "source_system": "GitHub Copilot IDE",
+    "source_component": "agent-runtime",
+    "source_reference_id": null
+  },
+  "status": "success",
+  "message": "5 scenarios scripted for KAN-8, npx playwright test passed",
+  "summary_line": "Outcome: The run completed successfully. 5 scenarios scripted for KAN-8, npx playwright test passed Recommended next step: review the outcome and continue to the next workflow step.",
+  "detail_summary": "5 scenarios scripted for KAN-8, npx playwright test passed",
+  "recommendation": "Review the outcome and continue to the next workflow step.",
+  "input_reference": {},
+  "usage": {
+    "total_tokens": null,
+    "tool_uses": null,
+    "duration_ms": null
+  },
+  "additional_details": {
+    "model_name": "GitHub Copilot",
+    "framework_version": "phase1-operationalization-v1",
+    "environment": "dev",
+    "human_summary": {
+      "summary_line": "Outcome: The run completed successfully. 5 scenarios scripted for KAN-8, npx playwright test passed Recommended next step: review the outcome and continue to the next workflow step.",
+      "detail_summary": "5 scenarios scripted for KAN-8, npx playwright test passed",
+      "recommendation": "Review the outcome and continue to the next workflow step."
+    },
+    "score_artifacts": {
+      "story_spec_path": null,
+      "playwright_spec_path": null,
+      "failure_report_path": null
+    }
+  }
+}

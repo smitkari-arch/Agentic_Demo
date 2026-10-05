@@ -15,4 +15,4 @@ This folder is the **project-committed** knowledge/memory layer of this repo's g
 - [approved-static-context.md](approved-static-context.md) — approved domain/app/API-spec/automation-standards context agents may rely on without re-deriving it each time.
 - [decision-log.md](decision-log.md) — human-approved decisions and exceptions, with dates.
 
-**Status:** Phase 1 scaffold. Per [instructions/phase1-scope.instructions.md](../instructions/phase1-scope.instructions.md), agents do not write to this folder autonomously — updates here are a human action, same as repository check-in.
+**Status:** Phase 1 scaffold. Agents do not write to this folder autonomously — updates here are a human action, same as repository check-in.

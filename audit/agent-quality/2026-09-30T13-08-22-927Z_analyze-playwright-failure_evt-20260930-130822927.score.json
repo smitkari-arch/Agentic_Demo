@@ -1,0 +1,138 @@
+{
+  "score_event_version": "v2",
+  "generated_at": "2026-10-01T10:14:11.217Z",
+  "source_event": {
+    "event_id": "evt-20260930-130822927",
+    "correlation_id": "KAN-8-run-20260930",
+    "jira_story_key": "KAN-8",
+    "skill": "analyze-playwright-failure",
+    "actor_name": "Healer Agent",
+    "actor_id": "agent.healer.v1",
+    "status": "success",
+    "event_timestamp": "2026-09-30T13:08:22.927Z",
+    "workflow_stage": "Failure Healing",
+    "message": "Fixed duplicate-email selector mismatch in RegisterPage; KAN-8 Playwright suite passed",
+    "source_file": "audit/agent-actions/2026-09-30T13-08-22-927Z_analyze-playwright-failure.json"
+  },
+  "metric_version": "v2",
+  "outcome_score": 77.25,
+  "confidence_score": 94.17,
+  "confidence_band": "High confidence",
+  "summary_line": "Good overall result. The analyze playwright failure scored 77.25/100 quality with 94.17/100 confidence. The output is usable, but some evidence is less complete than ideal. The confidence is acceptable, but additional evidence would make the result more reliable.",
+  "detail_summary": "This run is acceptable and generally supported by evidence. The score and confidence are based on available validation and metric coverage.",
+  "recommendation": "Review the output quality and add stronger evidence before using it as a final decision input.",
+  "primary_reason_code": "NOT_APPLICABLE",
+  "missing_metric_list": [],
+  "metric_explanations": [
+    {
+      "key": "failure_reproduction_rate",
+      "label": "Failure Reproduction Rate",
+      "value": 70,
+      "reason_code": null,
+      "explanation": "This metric scored 70/100 and contributed moderate support to the overall outcome score of 77/100 and confidence score of 94/100."
+    },
+    {
+      "key": "healing_success_rate",
+      "label": "Healing Success Rate",
+      "value": 95,
+      "reason_code": null,
+      "explanation": "This metric scored 95/100 and contributed strong support to the overall outcome score of 77/100 and confidence score of 94/100."
+    },
+    {
+      "key": "regression_safety_score",
+      "label": "Regression Safety Score",
+      "value": 87.5,
+      "reason_code": null,
+      "explanation": "This metric scored 87.5/100 and contributed strong support to the overall outcome score of 77/100 and confidence score of 94/100."
+    },
+    {
+      "key": "false_healing_rate",
+      "label": "False Healing Rate",
+      "value": 25,
+      "reason_code": null,
+      "explanation": "This metric scored 25/100 and contributed limited support to the overall outcome score of 77/100 and confidence score of 94/100."
+    }
+  ],
+  "outcome_weights": {
+    "active_weight": 1,
+    "total_weight": 1,
+    "missing_weight": 0
+  },
+  "metrics": [
+    {
+      "key": "failure_reproduction_rate",
+      "label": "Failure Reproduction Rate",
+      "weight": 0.2,
+      "value": 70,
+      "raw_inputs": {
+        "message": "Fixed duplicate-email selector mismatch in RegisterPage; KAN-8 Playwright suite passed",
+        "inferred": true
+      }
+    },
+    {
+      "key": "healing_success_rate",
+      "label": "Healing Success Rate",
+      "weight": 0.35,
+      "value": 95,
+      "raw_inputs": {
+        "status": "success",
+        "message": "Fixed duplicate-email selector mismatch in RegisterPage; KAN-8 Playwright suite passed"
+      }
+    },
+    {
+      "key": "regression_safety_score",
+      "label": "Regression Safety Score",
+      "weight": 0.3,
+      "value": 87.5,
+      "raw_inputs": {
+        "source": "playwright-report/results.json",
+        "last_run_status": "failed"
+      }
+    },
+    {
+      "key": "false_healing_rate",
+      "label": "False Healing Rate",
+      "weight": 0.15,
+      "value": 25,
+      "raw_inputs": {
+        "status": "success",
+        "message": "Fixed duplicate-email selector mismatch in RegisterPage; KAN-8 Playwright suite passed",
+        "note": "Computed from rerun safety signals when healing outcome is observable; otherwise kept conservative."
+      }
+    }
+  ],
+  "confidence_factors": [
+    {
+      "key": "evidence_completeness",
+      "label": "Evidence Completeness",
+      "weight": 0.4,
+      "value": 100,
+      "raw_inputs": {
+        "active_weight": 1,
+        "total_weight": 1,
+        "missing_weight": 0
+      }
+    },
+    {
+      "key": "validation_pass_rate",
+      "label": "Validation Pass Rate",
+      "weight": 0.35,
+      "value": 87.5,
+      "raw_inputs": {
+        "source": "playwright-report/results.json",
+        "expected": 7,
+        "unexpected": 1
+      }
+    },
+    {
+      "key": "historical_accuracy",
+      "label": "Historical Accuracy",
+      "weight": 0.25,
+      "value": null,
+      "reason_code": "HISTORICAL_BASELINE_UNAVAILABLE",
+      "raw_inputs": {
+        "note": "No historical completed runs for this agent yet."
+      }
+    }
+  ]
+}

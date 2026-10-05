@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-10-01T09:53:41.443Z",
+  "command": "issue",
+  "matchCounts": {
+    "GENERIC_SECRET": 2
+  },
+  "redactionMap": {
+    "[REDACTED:GENERIC_SECRET-1]": "Password: Test@123",
+    "[REDACTED:GENERIC_SECRET-2]": "Password: Test@123"
+  }
+}

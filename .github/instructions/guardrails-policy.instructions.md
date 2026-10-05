@@ -36,7 +36,7 @@ Agents generate, execute, analyze, and recommend. Humans approve coverage change
 - No autonomous release, defect closure, or healing acceptance.
 
 ### How this repo scopes "no direct write"
-This repo treats local Playwright specs and helpers as direct agent actions under human PR/code review, and it also treats business-level design artifacts under [specs](../../specs) as direct agent actions for the design workflow. External systems of record remain explicit human-triggered actions. Local writes remain gated by [copilot-instructions.md](../copilot-instructions.md)'s existing rules: live-DOM verification, mandatory real `npx playwright test` runs, and conservative healing limits. See [phase1-scope.instructions.md](phase1-scope.instructions.md).
+This repo treats local Playwright specs and helpers as direct agent actions under human PR/code review, and it also treats business-level design artifacts under [specs](../../specs) as direct agent actions for the design workflow. External systems of record remain explicit human-triggered actions. Local writes remain gated by [copilot-instructions.md](../copilot-instructions.md)'s existing rules: live-DOM verification, mandatory real `npx playwright test` runs, and conservative healing limits.
 
 ## Workflow Checkpoints
 Every agent step in [execution-model.instructions.md](execution-model.instructions.md) has a defined input/output and an explicit human checkpoint before anything is written externally or checked into the repository.

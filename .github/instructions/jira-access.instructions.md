@@ -21,6 +21,14 @@ node .github/scripts/jira-read.js search "project=PROJ AND status=\"To Do\"" sum
 
 `JIRA_BASE_URL`, `JIRA_EMAIL`, and `JIRA_API_TOKEN` must come from environment variables — never hardcode the Atlassian site URL, username, or API token in a command, script, or config file. The script itself throws if any of the three is unset; don't guess a value to work around that.
 
+On Windows/corporate environments, run the repo helper once to set the persistent user-level Node trust flag:
+
+```powershell
+. .\.github\scripts\enable-node-system-ca.ps1
+```
+
+This configures `NODE_OPTIONS=--use-system-ca` so `jira-read.js` can connect reliably without a per-session manual fix.
+
 ## Why `jira-read.js` over raw `curl` or a hook-dependent path
 
 Raw `curl` piped through a `PostToolUse` PII hook is a fragile pattern if that hook can intermittently fail to fire — a harness-level reliability concern, not something fixable by editing hook code alone. `jira-read.js` sidesteps the problem entirely: it fetches via Node's own `fetch()` (no hook dependency at all) and redacts PII **in the same process, before printing anything to stdout** — redaction is guaranteed by construction, not by a hook that may or may not run. It also writes its own audit entry to `audit/pii-scan-results/` (tagged `jira-read_<command>`) every time, same redaction-map format as the hooks.

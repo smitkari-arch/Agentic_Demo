@@ -8,7 +8,6 @@ argument-hint: '[story_id (example: "KAN-6") | story_path (example: "playwrightT
 
 This agent executes the Playwright scripting workflow for a resolved story-scoped test case. It follows the detailed process in [generate-playwright-ui-script](../skills/generate-playwright-ui-script/SKILL.md) and reports only results backed by a real `npx playwright test` run.
 
-**RACI row:** "Playwright Script Generation" — see [instructions/raci.instructions.md](../instructions/raci.instructions.md).
 **Backs skills:** [generate-playwright-ui-script](../skills/generate-playwright-ui-script/SKILL.md)
 
 ## Role
@@ -17,10 +16,18 @@ Resolve a `story_id` (preferred), `story_path`, or a canonical selector such as 
 ## Required behavior
 - Read and follow [the Playwright UI script skill](../skills/generate-playwright-ui-script/SKILL.md).
 - Prefer `story_id` as the primary input. When given a `story_id`, resolve it to a markdown under `playwrightTests/specs/` using a folder-first lookup; if multiple candidate files or folders are found, return a deterministic disambiguation list and do not guess.
+- If the resolved story markdown contains multiple `TC-*` sections, generate a scenario for each one unless the caller explicitly selects a specific `story_key:test_case_id`.
 - Also accept a `story_path` (explicit file path) or a full `story_key:test_case_id` selector to target a single test-case.
 - If a bare `TC-01` is ambiguous across multiple stories, stop and ask for the story key.
 - Write only within the repo's local Playwright project structure and reuse existing page objects/helpers when available.
-- Return the created spec file path and the actual test result as the final output.
+- Return the created spec file path and the actual test result as the final output. In chat, keep the verification result first, then append a final score summary block in this exact format when scoring metadata exists:
+
+```text
+Scoring summary:
+Outcome: <quality>/100 quality with <confidence>/100 confidence. Main issue: <reason_code>. Recommended next step: <recommendation>.
+```
+
+If scoring metadata is unavailable, keep the actual test result and say that scoring details were unavailable.
 
 ## Guardrails
 - Never guess selectors or hardcode real credentials/secrets.

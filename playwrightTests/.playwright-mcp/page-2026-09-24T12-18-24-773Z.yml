@@ -1,0 +1,902 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e5]:
+    - text:  
+    - banner "Site header" [ref=e6]:
+      - navigation [ref=e7]:
+        - link [ref=e9] [cursor=pointer]:
+          - /url: /
+          - img "Home" [ref=e10]
+        - generic [ref=e12]:
+          - heading "Main navigation" [level=2] [ref=e13]
+          - menu [ref=e14]:
+            - menuitem "Services " [ref=e15] [cursor=pointer]:
+              - text: Services
+              - generic [ref=e16]: 
+            - text:        
+            - menuitem "Industries " [ref=e17] [cursor=pointer]:
+              - text: Industries
+              - generic [ref=e18]: 
+            - text:       
+            - menuitem "Differentiators " [ref=e19] [cursor=pointer]:
+              - text: Differentiators
+              - generic [ref=e20]: 
+            - text:  
+            - menuitem "About Us " [ref=e21] [cursor=pointer]:
+              - text: About Us
+              - generic [ref=e22]: 
+            - text:     
+            - menuitem "Careers " [ref=e23] [cursor=pointer]:
+              - text: Careers
+              - generic [ref=e24]: 
+            - text:  
+        - search [ref=e25]:
+          - generic [ref=e26]:
+            - generic [aria-hidden] [ref=e27] [cursor=pointer]: 
+            - link "Lets Talk" [ref=e29] [cursor=pointer]:
+              - /url: /contact-us
+              - button "Let's Talk" [ref=e30]
+            - generic: 
+    - generic:
+      - complementary
+    - main [ref=e35]:
+      - generic [ref=e36]:
+        - link "main content":
+          - /url: "#main-content"
+        - article [ref=e39]:
+          - generic [ref=e41]:
+            - generic [ref=e43]:
+              - generic [ref=e45]:
+                - button "Slide 1" [ref=e46] [cursor=pointer]:
+                  - heading "Cloud, Data and AI" [level=4] [ref=e48]
+                - button "Slide 2" [ref=e49] [cursor=pointer]:
+                  - heading "Artificial Intelligence" [level=4] [ref=e50]
+                - button "Slide 3" [ref=e51] [cursor=pointer]:
+                  - heading "Digital Product Engineering" [level=4] [ref=e52]
+                - button "Slide 4" [ref=e53] [cursor=pointer]:
+                  - heading "Technology Solutions" [level=4] [ref=e54]
+                - button "Slide 5" [ref=e55] [cursor=pointer]:
+                  - heading "Digital Transformation" [level=4] [ref=e56]
+              - generic [ref=e57]:
+                - generic [ref=e58]:
+                  - img "CDAI banners design final-06" [ref=e60]
+                  - generic [ref=e61]:
+                    - heading "Engineering with and for AI" [level=3] [ref=e62]
+                    - heading "Build agentic AI, cloud-native platforms with Cybage to upgrade legacy stacks, enhance current products, and streamline enterprise workflows." [level=3] [ref=e63]
+                    - generic [ref=e64]:
+                      - link [ref=e65] [cursor=pointer]:
+                        - /url: /services/artificial-intelligence
+                        - text: Know How
+                        - paragraph [ref=e66]: ➔
+                      - link [ref=e67] [cursor=pointer]:
+                        - /url: /services/artificial-intelligence#resource-center
+                        - text: Success Stories
+                        - paragraph [ref=e68]: ➔
+                - generic [ref=e69]:
+                  - button "← Next" [ref=e70] [cursor=pointer]:
+                    - paragraph [ref=e71]: ←
+                    - generic [ref=e72]: Next
+                  - button "→ Previous" [ref=e73] [cursor=pointer]:
+                    - paragraph [ref=e74]: →
+                    - generic [ref=e75]: Previous
+            - generic [ref=e78]:
+              - generic [ref=e79]:
+                - heading "Why Cybage" [level=5] [ref=e80]
+                - heading "A Legacy of Excellence Since 1995" [level=2] [ref=e81]:
+                  - text: A Legacy of Excellence Since 1995
+                  - separator [ref=e82]
+                - generic [ref=e83]:
+                  - paragraph [ref=e84]: With decades of experience in delivering excellence, Cybage is consistently moving forward—fusing exceptional talent, efficient processes, and emerging technologies to thrive in the ever-changing business terrain.
+                  - paragraph [ref=e85]: At the heart of our unparalleled service lies ExcelShore®, our in-house platform that transforms the delivery ecosystem. Backed by profound thought leadership, ExcelShore® empowers us to move forward with a data-driven approach, guaranteeing our clients' maximum satisfaction and tangible returns on investment.
+              - generic [ref=e86]:
+                - heading "37 %" [level=1] [ref=e87]
+                - generic [ref=e88]: Referral Business
+                - separator [ref=e89]
+                - heading "96 +" [level=1] [ref=e90]
+                - generic [ref=e91]: Valued Clients
+                - separator [ref=e92]
+                - heading "2746 +" [level=1] [ref=e93]
+                - generic [ref=e94]: Committed Employees
+              - img "why-cybage" [ref=e95]
+            - generic [ref=e98]:
+              - heading "Our Services" [level=5] [ref=e99]
+              - heading "Agile, Innovative, and Always Moving Forward" [level=2] [ref=e100]:
+                - text: Agile, Innovative, and Always Moving Forward
+                - separator [ref=e101]
+              - generic [ref=e103]:
+                - generic [ref=e104] [cursor=pointer]:
+                  - heading "Digital Product Engineering" [level=4] [ref=e106]
+                  - paragraph [ref=e108]: From ideation to launch, our comprehensive suite of product engineering services and solutions helps bring your products to life.
+                  - link "Know more" [ref=e110]:
+                    - /url: /services/product-engineering
+                - generic [ref=e112] [cursor=pointer]:
+                  - heading "Technology Solutions" [level=4] [ref=e114]
+                  - paragraph [ref=e116]: With a rich legacy of transformative technology solutions, we forge ahead, adapting to the dynamic needs of industries worldwide.
+                  - link "Know more" [ref=e118]:
+                    - /url: /services/technology-solutions
+                - generic [ref=e120] [cursor=pointer]:
+                  - heading "Artificial Intelligence" [level=4] [ref=e122]
+                  - paragraph [ref=e124]: Leverage the power of AI to unlock your competitive edge, no matter where you stand in your AI journey.
+                  - link "Know more" [ref=e126]:
+                    - /url: /services/artificial-intelligence
+                - generic [ref=e128] [cursor=pointer]:
+                  - heading "Platform & Integrations" [level=4] [ref=e130]
+                  - paragraph [ref=e132]: Ensure enhanced productivity and scalability with our extensive set of services, tailored to elevate your capabilities.
+                  - link "Know more" [ref=e134]:
+                    - /url: /services/platform-integrations
+                - generic [ref=e136] [cursor=pointer]:
+                  - heading "Digital Transformation" [level=4] [ref=e138]
+                  - paragraph [ref=e140]: The digital landscape is rapidly evolving. We help you stay ahead and simplify the way your business moves.
+                  - link "Know more" [ref=e142]:
+                    - /url: /services/digital-transformation
+                - generic [ref=e144] [cursor=pointer]:
+                  - heading "Support Services" [level=4] [ref=e146]
+                  - paragraph [ref=e148]: From Remote Infrastructure Management (RIM) to tech-enabled services, we support your company’s core business and meet your unique requirements.
+                  - link "Know more" [ref=e150]:
+                    - /url: /services/support-services
+                - generic [ref=e152] [cursor=pointer]:
+                  - heading "GCC as a Service" [level=4] [ref=e154]
+                  - paragraph [ref=e156]: Deliver high-performance outcomes with managed GCCs—smart, scalable, and tailored to your strategic goals.
+                  - link "Know More" [ref=e158]:
+                    - /url: /services/gcc-as-a-service
+                - generic [ref=e160] [cursor=pointer]:
+                  - heading "PE Consulting Services" [level=4] [ref=e162]
+                  - paragraph [ref=e164]: Digital solutions for private equity firms that drive growth, enhance performance, streamline operations, and scale impact.
+                  - link "Know More" [ref=e166]:
+                    - /url: /services/private-equity
+            - generic [ref=e169]:
+              - img "Industries we cater to" [ref=e171]
+              - generic [ref=e173]:
+                - heading "Industries we Cater to" [level=5] [ref=e174]
+                - heading [level=2] [ref=e175]:
+                  - paragraph [ref=e176]: Moving with the Times, Moving with You
+                - separator [ref=e177]
+                - generic [ref=e179]:
+                  - generic [ref=e180]:
+                    - link [ref=e181] [cursor=pointer]:
+                      - /url: /industries/media-advertising
+                      - img "Media & Advertising" [ref=e182]
+                    - heading [level=5] [ref=e183]:
+                      - link "Media & Advertising" [ref=e184] [cursor=pointer]:
+                        - /url: /industries/media-advertising
+                  - generic [ref=e185]:
+                    - link [ref=e186] [cursor=pointer]:
+                      - /url: /industries/software-hi-tech
+                      - img "Software & Hi-Tech" [ref=e187]
+                    - heading [level=5] [ref=e188]:
+                      - link "Software & Hi-Tech" [ref=e189] [cursor=pointer]:
+                        - /url: /industries/software-hi-tech
+                  - generic [ref=e190]:
+                    - link [ref=e191] [cursor=pointer]:
+                      - /url: /industries/travel-hospitality
+                      - img "Travel & Hospitality" [ref=e192]
+                    - heading [level=5] [ref=e193]:
+                      - link "Travel & Hospitality" [ref=e194] [cursor=pointer]:
+                        - /url: /industries/travel-hospitality
+                  - generic [ref=e195]:
+                    - link [ref=e196] [cursor=pointer]:
+                      - /url: /industries/retail
+                      - img "Retail" [ref=e197]
+                    - heading [level=5] [ref=e198]:
+                      - link "Retail" [ref=e199] [cursor=pointer]:
+                        - /url: /industries/retail
+                  - generic [ref=e200]:
+                    - link [ref=e201] [cursor=pointer]:
+                      - /url: /industries/supply-chain-and-logistics
+                      - img "Supply Chain & Logistics" [ref=e202]
+                    - heading [level=5] [ref=e203]:
+                      - link "Supply Chain & Logistics" [ref=e204] [cursor=pointer]:
+                        - /url: /industries/supply-chain-and-logistics
+                  - generic [ref=e205]:
+                    - link [ref=e206] [cursor=pointer]:
+                      - /url: /industries/healthcare-life-sciences
+                      - img "Healthcare & Life Sciences" [ref=e207]
+                    - heading [level=5] [ref=e208]:
+                      - link "Healthcare & Life Sciences" [ref=e209] [cursor=pointer]:
+                        - /url: /industries/healthcare-life-sciences
+                  - generic [ref=e210]:
+                    - link [ref=e211] [cursor=pointer]:
+                      - /url: /industries/fintech
+                      - img "FinTech" [ref=e212]
+                    - heading [level=5] [ref=e213]:
+                      - link "FinTech" [ref=e214] [cursor=pointer]:
+                        - /url: /industries/fintech
+            - generic [ref=e217]:
+              - heading "Resource Center" [level=2] [ref=e218]
+              - generic [ref=e222]:
+                - tablist [ref=e224]:
+                  - tab [selected] [ref=e225]:
+                    - link "Success Stories" [ref=e226] [cursor=pointer]:
+                      - /url: /quicktabs/nojs/resource_center_homepage/0
+                  - tab [ref=e227]:
+                    - link "White Papers" [ref=e228] [cursor=pointer]:
+                      - /url: /quicktabs/nojs/resource_center_homepage/1
+                  - tab [ref=e229]:
+                    - link "Blogs" [ref=e230] [cursor=pointer]:
+                      - /url: /quicktabs/nojs/resource_center_homepage/2
+                - tabpanel "Success Stories" [ref=e232]:
+                  - generic [ref=e235]:
+                    - img "success-stories-img" [ref=e237]
+                    - generic [ref=e238]:
+                      - generic [ref=e240]:
+                        - heading [level=5] [ref=e241]:
+                          - link "AI-Native Security Review Identified ~99.99% of Security Defects Early for a Cybersecurity Software Provider" [ref=e242] [cursor=pointer]:
+                            - /url: /success-story/software-hi-tech/ai-native-security-review-identified-security-defects-early-for-a-cybersecurity-software-provider
+                        - generic [ref=e243]: Software & Hi-Tech, Experience Modernization, Greenfield Development, Platform Consolidation, Technology Transformation, Artificial Intelligence
+                        - link "AI-Native Security Review Identified ~99.99% of Security Defects Early for a Cybersecurity Software Provider link" [ref=e245] [cursor=pointer]:
+                          - /url: /success-story/software-hi-tech/ai-native-security-review-identified-security-defects-early-for-a-cybersecurity-software-provider
+                          - text: Read Full Story
+                      - generic [ref=e248]:
+                        - heading [level=5] [ref=e249]:
+                          - link "Serverless Architecture and Data-Driven Platform Modernization Delivered 99% Data Pipeline Stability for a Retail Media Technology Platform" [ref=e250] [cursor=pointer]:
+                            - /url: /success-story/retail/serverless-architecture-and-data-driven-platform-modernization-delivered-99-data-pipeline-stability-for-retail-media-technology-platform
+                        - generic [ref=e251]: Retail, Integrated Commerce Enablement, Retail Product Engineering, Retail Transformation, TechNovative Solutions, Technology Solutions, Cloud
+                        - link "Serverless Architecture and Data-Driven Platform Modernization Delivered 99% Data Pipeline Stability for a Retail Media Technology Platform link" [ref=e253] [cursor=pointer]:
+                          - /url: /success-story/retail/serverless-architecture-and-data-driven-platform-modernization-delivered-99-data-pipeline-stability-for-retail-media-technology-platform
+                          - text: Read Full Story
+                      - generic [ref=e256]:
+                        - heading [level=5] [ref=e257]:
+                          - link "Platform Re-architecture and Cloud Enablement Delivered Unified Store Operations for a Global Retail Technology Leader" [ref=e258] [cursor=pointer]:
+                            - /url: /success-story/retail/platform-re-architecture-and-cloud-enablement-delivered-unified-store-operations-for-a-global-retail
+                        - generic [ref=e259]: Retail, Technology Solutions, Retail Product Engineering, Retail Transformation, Integrated Commerce Enablement, TechNovative Solutions, Cloud
+                        - link "Platform Re-architecture and Cloud Enablement Delivered Unified Store Operations for a Global Retail Technology Leader link" [ref=e261] [cursor=pointer]:
+                          - /url: /success-story/retail/platform-re-architecture-and-cloud-enablement-delivered-unified-store-operations-for-a-global-retail
+                          - text: Read Full Story
+            - generic [ref=e265]:
+              - heading "Differentiators" [level=5] [ref=e266]
+              - generic [ref=e267]:
+                - generic [ref=e269]:
+                  - heading "Creating Roadmaps for Moving Forward" [level=2] [ref=e270]
+                  - separator [ref=e271]
+                  - paragraph
+                  - paragraph [ref=e272]: Cybage goes beyond intuition. We make informed decisions, leverage deep industry knowledge to craft bespoke solutions and optimize your business performance.
+                  - paragraph
+                - img "our differentiator image" [ref=e274]
+              - generic [ref=e275]:
+                - generic [ref=e276] [cursor=pointer]:
+                  - generic [ref=e277]:
+                    - heading [level=4]
+                    - heading "ExcelShore®" [level=5] [ref=e278]
+                  - paragraph [ref=e281]: Experience the power of data-driven insights for tangible results with ExcelShore®
+                  - link "Know more" [ref=e283]:
+                    - /url: /cybage-differentiator-excelshore
+                - generic [ref=e285] [cursor=pointer]:
+                  - generic [ref=e286]:
+                    - heading [level=4]
+                    - heading "Product Intensive Engineering (PIE)" [level=5] [ref=e287]
+                  - paragraph [ref=e290]: Meet PIE—our design thinking approach with automation at its core to address your software development challenges.
+                  - link "Know more" [ref=e292]:
+                    - /url: /cybage-differentiator-pie
+            - generic [ref=e295]:
+              - img "Partnerships and Alliances" [ref=e297]
+              - generic [ref=e299]:
+                - heading "Our Partners" [level=5] [ref=e300]
+                - heading [level=2] [ref=e301]:
+                  - paragraph [ref=e302]: Moving Forward, with You
+                - separator [ref=e303]
+                - generic [ref=e305]:
+                  - generic [ref=e306]:
+                    - generic [ref=e307]:
+                      - heading [level=5] [ref=e308]:
+                        - link "Cloud" [ref=e309] [cursor=pointer]:
+                          - /url: /services/technology-solutions
+                      - generic [ref=e311]:
+                        - link [ref=e314] [cursor=pointer]:
+                          - /url: /services/technology-solutions/cloud
+                          - img "Google Cloud" [ref=e315]
+                        - link [ref=e318] [cursor=pointer]:
+                          - /url: /services/technology-solutions/cloud
+                          - img "Azure" [ref=e319]
+                        - link [ref=e322] [cursor=pointer]:
+                          - /url: /services/technology-solutions/cloud/aws
+                          - img "AWS" [ref=e323]
+                        - link [ref=e326] [cursor=pointer]:
+                          - /url: /services/technology-solutions/cloud
+                          - img "Oracle Cloud" [ref=e327]
+                    - generic [ref=e328]:
+                      - heading [level=5] [ref=e329]:
+                        - link "Sales and Services" [ref=e330] [cursor=pointer]:
+                          - /url: /services/platform-integrations
+                      - generic [ref=e332]:
+                        - link [ref=e335] [cursor=pointer]:
+                          - /url: /services/platform-integrations/customer-relationship-management-crm/salesforce
+                          - img "Salesforce" [ref=e336]
+                        - link [ref=e339] [cursor=pointer]:
+                          - /url: /services/platform-integrations/service-now
+                          - img "Servicenow" [ref=e340]
+                    - generic [ref=e341]:
+                      - heading [level=5] [ref=e342]:
+                        - link "WMS" [ref=e343] [cursor=pointer]:
+                          - /url: /industries/supply-chain-and-logistics/wms
+                      - link [ref=e348] [cursor=pointer]:
+                        - /url: /about-us/company-overview/our-partners/infios
+                        - img "Infios" [ref=e349]
+                    - generic [ref=e350]:
+                      - heading [level=5] [ref=e351]:
+                        - link "RPA" [ref=e352] [cursor=pointer]:
+                          - /url: /services/technology-solutions/rpa
+                      - generic [ref=e354]:
+                        - link [ref=e357] [cursor=pointer]:
+                          - /url: /services/technology-solutions/rpa
+                          - img "Automation Anywhere" [ref=e358]
+                        - link [ref=e361] [cursor=pointer]:
+                          - /url: /services/technology-solutions/rpa
+                          - img "Power Automate" [ref=e362]
+                        - link [ref=e365] [cursor=pointer]:
+                          - /url: /services/technology-solutions/rpa
+                          - img "UiPath" [ref=e366]
+                    - generic [ref=e367]:
+                      - heading [level=5] [ref=e368]:
+                        - link "Enterprise Content Management" [ref=e369] [cursor=pointer]:
+                          - /url: /services/platform-integrations/enterprise-content-management-ecm
+                      - generic [ref=e371]:
+                        - link [ref=e374] [cursor=pointer]:
+                          - /url: /services/platform-integrations/enterprise-content-management-ecm/adobe-experience-manager
+                          - img "Adobe Experience Manager" [ref=e375]
+                        - link [ref=e378] [cursor=pointer]:
+                          - /url: /services/platform-integrations/enterprise-content-management-ecm/drupal
+                          - img "Drupal" [ref=e379]
+                        - link [ref=e382] [cursor=pointer]:
+                          - /url: /services/platform-integrations/enterprise-content-management-ecm/sitecore
+                          - img "Sitecore" [ref=e383]
+                  - link "View All" [ref=e385] [cursor=pointer]:
+                    - /url: /about-us/company-overview/our-partners
+            - generic [ref=e390]:
+              - generic [ref=e391]:
+                - heading "Digitally Speaking" [level=5] [ref=e392]
+                - heading "From the CEO's Desk" [level=2] [ref=e393]
+                - separator [ref=e394]
+                - blockquote [ref=e396]:
+                  - img "ceo-double-quotes-icon" [ref=e397]
+                  - paragraph [ref=e398]: Everywhere in the business world, the power of digital disruptions has been providing a transformative edge to those who understand them. One would hence assume that IT service pioneers with a knack for digital know-how should be the leading transformers of their own environments.
+                - link "Explore More" [ref=e400] [cursor=pointer]:
+                  - /url: /from-the-ceo-desk
+              - generic [ref=e403]:
+                - img "Arun Nathani - CEO Cybage Software Private Limited" [ref=e404]
+                - generic [ref=e405]: Arun Nathani CEO and MD
+            - generic [ref=e409]:
+              - generic [ref=e410]:
+                - heading "Culture in Motion" [level=5] [ref=e411]
+                - generic [ref=e412]:
+                  - heading "Nurturing People, Shaping Values" [level=2] [ref=e413]:
+                    - text: Nurturing People, Shaping Values
+                    - separator [ref=e414]
+                  - paragraph [ref=e415]: At Cybage, we put people first, embrace change and act with integrity to create a culture of excellence.
+              - generic [ref=e417]:
+                - generic [ref=e419]:
+                  - img "Work-Life Balance" [ref=e420]
+                  - generic [ref=e421]:
+                    - generic [ref=e422]: +
+                    - heading "Work-Life Balance" [level=5] [ref=e423]
+                - generic [ref=e425]:
+                  - img "Customer-Centricity" [ref=e426]
+                  - generic [ref=e427]:
+                    - generic [ref=e428]: +
+                    - heading "Customer-Centricity" [level=5] [ref=e429]
+                - generic [ref=e431]:
+                  - img "Responsible Business" [ref=e432]
+                  - generic [ref=e433]:
+                    - generic [ref=e434]: +
+                    - heading "Responsible Business" [level=5] [ref=e435]
+            - generic [ref=e439]:
+              - generic [ref=e440]:
+                - heading "CybageAsha" [level=5] [ref=e441]
+                - heading "Moving Forward with Shared Commitment to Society’s Development" [level=2] [ref=e442]
+                - separator [ref=e443]
+                - link "Know More" [ref=e445] [cursor=pointer]:
+                  - /url: /about-us/responsible-business/cybage-foundation
+              - img "Cybage ASha image" [ref=e449]
+            - generic [ref=e453]:
+              - generic [ref=e454]:
+                - heading "CybageKhushboo" [level=5] [ref=e455]
+                - heading "Moving Forward with Knowledge for All" [level=2] [ref=e456]
+                - separator [ref=e457]
+                - link "Know More" [ref=e459] [cursor=pointer]:
+                  - /url: /about-us/responsible-business/cybage-foundation
+              - img "Cybage Khushboo" [ref=e463]
+            - generic [ref=e467]:
+              - generic [ref=e468]:
+                - heading "We are Hiring!" [level=5] [ref=e469]
+                - heading "Be a Part of Our Team" [level=2] [ref=e470]
+                - separator [ref=e471]
+                - generic [ref=e472]:
+                  - heading "Ready to Move Forward?" [level=5] [ref=e473]
+                  - paragraph [ref=e474]: Whether it’s engineering, consulting, sales and marketing, or anything else, apply your skills and be a part of the environment that supports you every step of the way. All we want—is for you to have a fulfilling and rewarding experience with us.
+                - link "Explore More" [ref=e476] [cursor=pointer]:
+                  - /url: /careers/open-positions
+              - generic [ref=e479]:
+                - img "Trying to find" [ref=e480]
+                - generic [ref=e481]: 7k + Team
+            - generic [ref=e484]:
+              - heading "Our Presence" [level=2] [ref=e485]
+              - generic [ref=e487]:
+                - generic [ref=e488]:
+                  - list [ref=e491]:
+                    - listitem [ref=e492]:
+                      - link "INDIA" [ref=e493] [cursor=pointer]:
+                        - /url: "#india"
+                    - listitem [ref=e494]:
+                      - link "LATAM" [ref=e495] [cursor=pointer]:
+                        - /url: "#latam"
+                    - listitem [ref=e496]:
+                      - link "North America" [ref=e497] [cursor=pointer]:
+                        - /url: "#americas"
+                    - listitem [ref=e498]:
+                      - link "EMEA" [ref=e499] [cursor=pointer]:
+                        - /url: "#emea"
+                    - listitem [ref=e500]:
+                      - link "AUSTRALIA" [ref=e501] [cursor=pointer]:
+                        - /url: "#australia"
+                    - listitem [ref=e502]:
+                      - link "ASIA PACIFIC" [ref=e503] [cursor=pointer]:
+                        - /url: "#asia_pacific"
+                  - generic [ref=e505] [cursor=pointer]:
+                    - generic [ref=e506]: Select Region
+                    - img "Chevron down" [ref=e507]
+                - generic [ref=e508]:
+                  - generic [ref=e510]:
+                    - heading "India" [level=3] [ref=e511]:
+                      - separator [ref=e512]
+                      - separator [ref=e514]
+                    - generic [ref=e520]:
+                      - generic [ref=e521]:
+                        - heading "Pune" [level=3] [ref=e522]
+                        - generic [ref=e524]:
+                          - paragraph [ref=e526]:
+                            - strong [ref=e527]: Cybage Software Pvt. Ltd. (Headquarters)
+                          - paragraph [ref=e529]: Cybage Towers Survey No 13A/ 1+2+3/1 Wadgaon Sheri Pune, Maharashtra - 411014
+                          - paragraph [ref=e530]:
+                            - strong [ref=e531]: "Ph:"
+                            - text: +91-20-66041700
+                          - paragraph [ref=e532]:
+                            - strong [ref=e533]: "Email:"
+                            - link "business@cybage.com" [ref=e534] [cursor=pointer]:
+                              - /url: mailto:Business@cybage.com
+                        - generic [ref=e536]:
+                          - paragraph [ref=e538]:
+                            - strong [ref=e539]: Cybage Software Pvt. Ltd.
+                          - paragraph [ref=e541]: FP No. 25A, Survey No. 222/1, West Avenue, Kalyani Nagar, Pune, Maharashtra - 411006
+                          - paragraph [ref=e542]:
+                            - strong [ref=e543]: "Ph:"
+                            - text: +91-20-66041700
+                          - paragraph [ref=e544]:
+                            - strong [ref=e545]: "Email:"
+                            - link "business@cybage.com" [ref=e546] [cursor=pointer]:
+                              - /url: mailto:Business@cybage.com
+                        - generic [ref=e548]:
+                          - paragraph [ref=e550]:
+                            - strong [ref=e551]: Cybage Software Pvt. Ltd.
+                            - strong [ref=e552]: (Kumar Cerebrum Unit)
+                          - paragraph [ref=e554]: 6th Floor, Cerebrum B2, The Cerebrum IT Park, Near Gold Adlabs, Kalyani Nagar, Pune, Maharashtra - 411014.
+                          - paragraph [ref=e555]:
+                            - strong [ref=e556]: "Ph:"
+                            - text: +91-20-66041700
+                          - paragraph [ref=e557]:
+                            - strong [ref=e558]: "Email:"
+                            - link "business@cybage.com" [ref=e559] [cursor=pointer]:
+                              - /url: mailto:Business@cybage.com
+                        - generic [ref=e561]:
+                          - paragraph [ref=e563]:
+                            - strong [ref=e564]: Cybage Software Pvt. Ltd.
+                            - strong [ref=e565]: (Kumar Cerebrum Unit - 7th floor)
+                          - paragraph [ref=e567]: 702, 7th floor, Building B-1, Cerebrum IT Park, Survey No. 13/B, 1+2+3, Survey No 14, Wadgaon Sheri, Pune - 411014
+                          - paragraph [ref=e568]:
+                            - strong [ref=e569]: "Ph:"
+                            - text: +91-20-66041700
+                          - paragraph [ref=e570]:
+                            - strong [ref=e571]: "Email:"
+                            - link "business@cybage.com" [ref=e572] [cursor=pointer]:
+                              - /url: mailto:Business@cybage.com
+                      - generic [ref=e573]:
+                        - heading "Gandhinagar" [level=3] [ref=e574]
+                        - generic [ref=e576]:
+                          - paragraph [ref=e578]:
+                            - strong [ref=e579]: Cybage Software Pvt. Ltd. Infocity,
+                          - paragraph [ref=e581]: Tower II, Infocity, 2nd Floor Gandhinagar, Gujarat - 382009
+                          - paragraph [ref=e582]:
+                            - strong [ref=e583]: "Ph:"
+                            - text: +91-79-66737000
+                          - paragraph [ref=e584]:
+                            - strong [ref=e585]: "Email:"
+                            - link "business@cybage.com" [ref=e586] [cursor=pointer]:
+                              - /url: mailto:business@cybage.com
+                        - generic [ref=e588]:
+                          - paragraph [ref=e590]:
+                            - strong [ref=e591]: Cybage Software Pvt. Ltd. (GIFT SEZ UNIT)
+                          - paragraph [ref=e593]: 7th Floor, Brigade International Financial Centre, Block 14 A, Zone-1, GIFT Multi Services SEZ, Phirozpur and Ratanpur, District Gandhinagar - 382355
+                        - generic [ref=e595]:
+                          - paragraph [ref=e597]:
+                            - strong [ref=e598]: Cybage Software Pvt. Ltd. (Footprint, Giftcity)
+                          - paragraph [ref=e600]: Giftcity, 14H Block 14, Footprint, Giftcity, Palaj Gandhinagar - 382355
+                        - generic [ref=e601]:
+                          - heading "Hyderabad" [level=3] [ref=e602]
+                          - generic [ref=e604]:
+                            - paragraph [ref=e606]:
+                              - strong [ref=e607]: Cybage Software Pvt. Ltd.
+                            - paragraph [ref=e609]: DLF Cyber City (SEZ), 7th Floor, Block 2, Gachibowli, Hyderabad, Telangana - 500032
+                            - paragraph [ref=e610]:
+                              - strong [ref=e611]: "Ph:"
+                              - text: +91-40-66294100
+                            - paragraph [ref=e612]:
+                              - strong [ref=e613]: "Email:"
+                              - link "business@cybage.com" [ref=e614] [cursor=pointer]:
+                                - /url: mailto:business@cybage.com
+                          - generic [ref=e616]:
+                            - paragraph [ref=e618]:
+                              - strong [ref=e619]: Cybage Software Pvt. Ltd.
+                            - paragraph [ref=e621]: DLF Cyber City (SEZ), 6th Floor, Block 3, Gachibowli, Hyderabad, Telangana - 500032
+                          - generic [ref=e623]:
+                            - paragraph [ref=e625]:
+                              - strong [ref=e626]: Cybage Software Pvt. Ltd.
+                            - paragraph [ref=e628]: "Building No./Flat No.: 2-9/A Seri Lingampally Mandal Road, Survey No. 90/2, Gachibowli Hyderabad RANGAREDDY - 500032"
+                    - heading "LATAM" [level=3] [ref=e629]:
+                      - separator [ref=e630]
+                      - separator [ref=e632]
+                    - generic [ref=e636]:
+                      - generic [ref=e637]: Brazil
+                      - generic [ref=e641]:
+                        - paragraph [ref=e643]:
+                          - strong [ref=e644]: Cybage Software Ltda.
+                        - paragraph [ref=e646]: Avenida das Nações Unidas, n. 14401, Tower Office C2 (Tarumã), Office 2005, São Paulo-SP
+                        - paragraph [ref=e647]:
+                          - strong [ref=e648]: "Ph:"
+                          - text: +91 8530109729
+                        - paragraph [ref=e649]:
+                          - strong [ref=e650]: "Email:"
+                          - link "Finance_Brazil@cybage.com" [ref=e651] [cursor=pointer]:
+                            - /url: mailto:Finance_Brazil@cybage.com
+                    - heading "North America" [level=3] [ref=e652]:
+                      - separator [ref=e653]
+                      - separator [ref=e655]
+                    - generic [ref=e659]:
+                      - generic [ref=e660]: USA
+                      - generic [ref=e664]:
+                        - paragraph [ref=e666]:
+                          - strong [ref=e667]: Cybage Software, Inc.
+                        - paragraph [ref=e669]: Suite - E, 37 Station Drive, Princeton Junction, NJ 08550
+                        - paragraph [ref=e670]:
+                          - strong [ref=e671]: "Ph:"
+                          - text: +1609-212-0308 / +1609-212-0309
+                        - paragraph [ref=e672]:
+                          - strong [ref=e673]: "Email:"
+                          - link "business@cybage.com" [ref=e674] [cursor=pointer]:
+                            - /url: mailto:Business@cybage.com
+                    - generic [ref=e678]:
+                      - generic [ref=e679]: Canada
+                      - generic [ref=e683]:
+                        - paragraph [ref=e685]:
+                          - strong [ref=e686]: Cybage Software Pvt. Ltd.
+                        - paragraph [ref=e688]: 77 City Centre Drive, East Tower, Suite 501, Mississauga, ON, L5B 1M5
+                        - paragraph [ref=e689]:
+                          - strong [ref=e690]: "Ph:"
+                          - text: "+14372662040"
+                        - paragraph [ref=e691]:
+                          - strong [ref=e692]: "Email:"
+                          - link "business@cybage.com" [ref=e693] [cursor=pointer]:
+                            - /url: mailto:Business@cybage.com
+                    - heading "EMEA" [level=3] [ref=e694]:
+                      - separator [ref=e695]
+                      - separator [ref=e697]
+                    - generic [ref=e701]:
+                      - generic [ref=e702]: UK
+                      - generic [ref=e706]:
+                        - paragraph [ref=e708]:
+                          - strong [ref=e709]: Cybage Software (UK) Limited
+                        - paragraph [ref=e711]: C/O Ballards Newman, Apex House, Grand Arcade, Tally Ho Corner, London, England, N12 0EH
+                        - paragraph [ref=e712]:
+                          - strong [ref=e713]: "Ph:"
+                          - text: +44(0)7827851 762
+                        - paragraph [ref=e714]:
+                          - strong [ref=e715]: "Email:"
+                          - link "business@cybage.com" [ref=e716] [cursor=pointer]:
+                            - /url: mailto:Business@cybage.com
+                    - generic [ref=e720]:
+                      - generic [ref=e721]: Netherlands
+                      - generic [ref=e725]:
+                        - paragraph [ref=e727]:
+                          - strong [ref=e728]: Cybage Software BV
+                        - paragraph [ref=e730]: Preludeweg 101, 1312 SN Almere North-Holland, The Netherlands
+                        - paragraph [ref=e731]:
+                          - strong [ref=e732]: "Email:"
+                          - link "business@cybage.com" [ref=e733] [cursor=pointer]:
+                            - /url: mailto:Business@cybage.com
+                    - generic [ref=e737]:
+                      - generic [ref=e738]: Germany
+                      - generic [ref=e742]:
+                        - paragraph [ref=e744]:
+                          - strong [ref=e745]: Cybage Software GmbH
+                        - paragraph [ref=e747]: Am Seedamm 44 60489 Frankfurt am Main
+                        - paragraph [ref=e748]:
+                          - strong [ref=e749]: "Ph:"
+                          - text: +49-6966554126
+                        - paragraph [ref=e750]:
+                          - strong [ref=e751]: "Email:"
+                          - link "business@cybage.com" [ref=e752] [cursor=pointer]:
+                            - /url: mailto:Business@cybage.com
+                    - generic [ref=e756]:
+                      - generic [ref=e757]: Sweden
+                      - generic [ref=e761]:
+                        - paragraph [ref=e763]:
+                          - strong [ref=e764]: Cybage Software Sverige Filial
+                        - paragraph [ref=e766]: C/O Nordic Accounts Stockholm AB, Box 5385, 102 49 Stockholm
+                        - paragraph [ref=e767]:
+                          - strong [ref=e768]: "Email:"
+                          - link "business@cybage.com" [ref=e769] [cursor=pointer]:
+                            - /url: mailto:Business@cybage.com
+                    - generic [ref=e773]:
+                      - generic [ref=e774]: France
+                      - generic [ref=e778]:
+                        - paragraph [ref=e780]:
+                          - strong [ref=e781]: Cybage Software France
+                        - paragraph [ref=e783]: 71 avenue Victor Hugo 75116 Paris
+                        - paragraph [ref=e784]:
+                          - strong [ref=e785]: "Email:"
+                          - link "business@cybage.com" [ref=e786] [cursor=pointer]:
+                            - /url: mailto:Business@cybage.com
+                    - generic [ref=e790]:
+                      - generic [ref=e791]: Ireland
+                      - generic [ref=e795]:
+                        - paragraph [ref=e797]:
+                          - strong [ref=e798]: Cybage Software Pvt. Ltd.
+                        - paragraph [ref=e800]: Company Formations International Limited, 22 Northumberland Road, Dublin 4, Ballsbridge, Dublin, Ireland, D04ED73
+                        - paragraph [ref=e801]:
+                          - strong [ref=e802]: "Email:"
+                          - link "business@cybage.com" [ref=e803] [cursor=pointer]:
+                            - /url: mailto:Business@cybage.com
+                    - generic [ref=e807]:
+                      - generic [ref=e808]: Poland
+                      - generic [ref=e812]:
+                        - paragraph [ref=e814]:
+                          - strong [ref=e815]: Cybage Software sp. z o.o.
+                        - paragraph [ref=e817]: ul.Szlak 77/222, 31-153 Kraków
+                        - paragraph [ref=e818]:
+                          - strong [ref=e819]: "Email:"
+                          - link "Finance_Poland@cybage.com" [ref=e820] [cursor=pointer]:
+                            - /url: mailto:Finance_Poland@cybage.com
+                    - heading "Australia" [level=3] [ref=e821]:
+                      - separator [ref=e822]
+                      - separator [ref=e824]
+                    - generic [ref=e831]:
+                      - paragraph [ref=e833]:
+                        - strong [ref=e834]: Cybage Software Pvt. Ltd
+                      - paragraph [ref=e836]: 78 Taylor Street, West Pennant Hills, NSW 2125
+                      - paragraph [ref=e837]:
+                        - strong [ref=e838]: "Email:"
+                        - link "business@cybage.com" [ref=e839] [cursor=pointer]:
+                          - /url: mailto:Business@cybage.com
+                    - heading "Asia Pacific" [level=3] [ref=e840]:
+                      - separator [ref=e841]
+                      - separator [ref=e843]
+                    - generic [ref=e847]:
+                      - generic [ref=e848]: Japan
+                      - generic [ref=e852]:
+                        - paragraph [ref=e854]:
+                          - strong [ref=e855]: Kabushaki Kaisha Cybage Software Japan
+                        - paragraph [ref=e857]: 101-0032 7th floor, Toshima Machine Building,3-10-7 Iwamotocho,Chiyoda-ku,Tokyo
+                        - paragraph [ref=e858]:
+                          - strong [ref=e859]: "Ph:"
+                          - text: "+810345401346"
+                        - paragraph [ref=e860]:
+                          - strong [ref=e861]: "Email:"
+                          - link "business@cybage.com" [ref=e862] [cursor=pointer]:
+                            - /url: mailto:Business@cybage.com
+                    - generic [ref=e866]:
+                      - generic [ref=e867]: Singapore
+                      - generic [ref=e871]:
+                        - paragraph [ref=e873]:
+                          - strong [ref=e874]: Cybage Software Pvt. Ltd.
+                        - paragraph [ref=e876]: 19-03 High Street Centre, 1 North Bridge Road, Singapore 179094
+                        - paragraph [ref=e877]:
+                          - strong [ref=e878]: "Ph:"
+                          - text: +65-81215847
+                        - paragraph [ref=e879]:
+                          - strong [ref=e880]: "Email:"
+                          - link "business@cybage.com" [ref=e881] [cursor=pointer]:
+                            - /url: mailto:Business@cybage.com
+                  - generic [ref=e882]:
+                    - img "World Map" [ref=e883]
+                    - list [ref=e886]:
+                      - listitem [ref=e887]: Pune
+                      - listitem [ref=e888]: Gandhinagar
+                      - listitem [ref=e889]: Hyderabad
+            - generic [ref=e907]:
+              - generic [ref=e908]:
+                - heading "Let's Get Moving!" [level=5] [ref=e909]
+                - heading "Your purpose, our passion. Connect with us and let's make things happen." [level=2] [ref=e910]
+                - separator [ref=e911]
+                - generic [ref=e914]:
+                  - generic [ref=e915]: Image
+                  - img "Lets-Get-Moving" [ref=e917]
+              - generic [ref=e918]:
+                - heading [level=2]
+                - generic [ref=e920]:
+                  - generic [ref=e921]:
+                    - generic [ref=e922]: Name
+                    - textbox "Name" [ref=e923]
+                  - generic [ref=e924]:
+                    - generic [ref=e925]: Relationship with Cybage
+                    - combobox "Relationship with Cybage" [ref=e926]:
+                      - option "Select" [selected]
+                      - option "New Business Opportunities/Customer"
+                      - option "Partner"
+                      - option "CybageKhushboo/CybageAsha"
+                      - option "Job Seeker"
+                      - option "Ex-Cybagian"
+                  - generic [ref=e927]:
+                    - generic [ref=e928]: Job Title
+                    - textbox "Job Title" [ref=e929]
+                  - generic [ref=e930]:
+                    - generic [ref=e931]: Work Email ID
+                    - textbox "Work Email ID" [ref=e932]
+                  - generic [ref=e933]:
+                    - generic [ref=e934]: Message
+                    - generic [ref=e935]:
+                      - textbox "Message" [ref=e936]
+                      - generic [ref=e937]: "Characters left: 500"
+                  - generic [ref=e939]:
+                    - generic [ref=e940]: Agree to the privacy policy
+                    - checkbox "Agree to the privacy policy" [ref=e941]
+                    - generic [ref=e943]:
+                      - text: I have read and agree to the
+                      - link "Privacy Policy" [ref=e944] [cursor=pointer]:
+                        - /url: /privacy-policy
+                      - text: .
+                  - generic [ref=e945]:
+                    - checkbox "Subscribe to Cybage's latest thought leadership, blogs and updates" [ref=e946]
+                    - generic [ref=e947]: Subscribe to Cybage's latest thought leadership, blogs and updates
+                  - button "Get in touch" [ref=e949] [cursor=pointer]
+            - generic [ref=e955]:
+              - generic [ref=e956]:
+                - heading "Your feedback" [level=5] [ref=e957]
+                - heading "is important to us to help us serve you better." [level=2] [ref=e958]
+              - link "Share your feedback" [ref=e961] [cursor=pointer]:
+                - /url: /form/feedback-form
+    - contentinfo [ref=e963]:
+      - generic [ref=e966]:
+        - generic [ref=e971]:
+          - list [ref=e973]:
+            - listitem [ref=e974]:
+              - link [ref=e975] [cursor=pointer]:
+                - /url: "\nhttps://www.linkedin.com/company/cybage"
+                - img "cybage linkedin icon" [ref=e976]
+            - listitem [ref=e977]:
+              - link [ref=e978] [cursor=pointer]:
+                - /url: "\nhttps://www.instagram.com/cybage"
+                - img "cybage instagram icon" [ref=e979]
+            - listitem [ref=e980]:
+              - link [ref=e981] [cursor=pointer]:
+                - /url: "\nhttps://x.com/Cybagesoftware/highlights"
+                - img "cybage x icon" [ref=e982]
+            - listitem [ref=e983]:
+              - link [ref=e984] [cursor=pointer]:
+                - /url: "\nhttps://www.facebook.com/cybage"
+                - img "cybage facebook icon" [ref=e985]
+            - listitem [ref=e986]:
+              - link [ref=e987] [cursor=pointer]:
+                - /url: "\nhttps://www.youtube.com/user/cybagesoftware"
+                - img "cybage youtube icon" [ref=e988]
+          - generic [ref=e989]:
+            - paragraph [ref=e990]: Stay Informed with the latest insights from our LinkedIn Newsletter
+            - link "Subscribe" [ref=e992] [cursor=pointer]:
+              - /url: "\nhttps://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7155177797945044992"
+        - navigation [ref=e994]:
+          - heading "Footer" [level=2] [ref=e995]
+          - list [ref=e1000]:
+            - listitem [ref=e1001]:
+              - generic [ref=e1002]: Services
+              - list [ref=e1004]:
+                - listitem [ref=e1005]:
+                  - link "Digital Product Engineering" [ref=e1007] [cursor=pointer]:
+                    - /url: /services/product-engineering
+                - listitem [ref=e1008]:
+                  - link "Technology Solutions" [ref=e1010] [cursor=pointer]:
+                    - /url: /services/technology-solutions
+                - listitem [ref=e1011]:
+                  - link "Artificial Intelligence" [ref=e1013] [cursor=pointer]:
+                    - /url: /services/artificial-intelligence
+                - listitem [ref=e1014]:
+                  - link "Platform & Integrations" [ref=e1016] [cursor=pointer]:
+                    - /url: /services/platform-integrations
+                - listitem [ref=e1017]:
+                  - link "Digital Transformation" [ref=e1019] [cursor=pointer]:
+                    - /url: /services/digital-transformation
+                - listitem [ref=e1020]:
+                  - link "Support Services" [ref=e1022] [cursor=pointer]:
+                    - /url: /services/support-services
+                - listitem [ref=e1023]:
+                  - link "GCC as a Service" [ref=e1025] [cursor=pointer]:
+                    - /url: /services/gcc-as-a-service
+                - listitem [ref=e1026]:
+                  - link "PE Consulting Services" [ref=e1028] [cursor=pointer]:
+                    - /url: /services/private-equity
+            - listitem [ref=e1029]:
+              - generic [ref=e1030]: Industries
+              - list [ref=e1032]:
+                - listitem [ref=e1033]:
+                  - link "Media & Advertising" [ref=e1035] [cursor=pointer]:
+                    - /url: /industries/media-advertising
+                - listitem [ref=e1036]:
+                  - link "Software & Hi-Tech" [ref=e1038] [cursor=pointer]:
+                    - /url: /industries/software-hi-tech
+                - listitem [ref=e1039]:
+                  - link "Travel & Hospitality" [ref=e1041] [cursor=pointer]:
+                    - /url: /industries/travel-hospitality
+                - listitem [ref=e1042]:
+                  - link "Retail" [ref=e1044] [cursor=pointer]:
+                    - /url: /industries/retail
+                - listitem [ref=e1045]:
+                  - link "Supply Chain & Logistics" [ref=e1047] [cursor=pointer]:
+                    - /url: /industries/supply-chain-and-logistics
+                - listitem [ref=e1048]:
+                  - link "Healthcare & Life Sciences" [ref=e1050] [cursor=pointer]:
+                    - /url: /industries/healthcare-life-sciences
+                - listitem [ref=e1051]:
+                  - link "FinTech" [ref=e1053] [cursor=pointer]:
+                    - /url: /industries/fintech
+            - listitem [ref=e1054]:
+              - generic [ref=e1055]: Differentiators
+              - list [ref=e1057]:
+                - listitem [ref=e1058]:
+                  - link "ExcelShore®" [ref=e1060] [cursor=pointer]:
+                    - /url: /cybage-differentiator-excelshore
+                - listitem [ref=e1061]:
+                  - link "Product Intensive Engineering (PIE)" [ref=e1063] [cursor=pointer]:
+                    - /url: /cybage-differentiator-pie
+            - listitem [ref=e1064]:
+              - generic [ref=e1065]: About Us
+              - list [ref=e1067]:
+                - listitem [ref=e1068]:
+                  - link "Company Overview" [ref=e1070] [cursor=pointer]:
+                    - /url: /about-us/company-overview
+                - listitem [ref=e1071]:
+                  - link "Our Partners" [ref=e1073] [cursor=pointer]:
+                    - /url: /about-us/company-overview/our-partners
+                - listitem [ref=e1074]:
+                  - link "Responsible Business" [ref=e1076] [cursor=pointer]:
+                    - /url: /about-us/responsible-business
+                - listitem [ref=e1077]:
+                  - link "Newsroom" [ref=e1079] [cursor=pointer]:
+                    - /url: /about-us/newsroom
+                - listitem [ref=e1080]:
+                  - link "Awards and Recognitions" [ref=e1082] [cursor=pointer]:
+                    - /url: /about-us/awards-and-recognitions
+                - listitem [ref=e1083]:
+                  - link "Resource Center" [ref=e1085] [cursor=pointer]:
+                    - /url: /about-us/resource-center
+            - listitem [ref=e1086]:
+              - link "Careers" [ref=e1088] [cursor=pointer]:
+                - /url: /careers/open-positions
+            - listitem [ref=e1089]:
+              - link "Contact Us" [ref=e1091] [cursor=pointer]:
+                - /url: /contact-us
+            - listitem [ref=e1092]:
+              - generic [ref=e1093]: Global Presence
+              - list [ref=e1095]:
+                - listitem [ref=e1096]:
+                  - link "Australia" [ref=e1098] [cursor=pointer]:
+                    - /url: /geo-presence/australia
+                - listitem [ref=e1099]:
+                  - link "USA" [ref=e1101] [cursor=pointer]:
+                    - /url: /
+                - listitem [ref=e1102]:
+                  - link "UK" [ref=e1104] [cursor=pointer]:
+                    - /url: /
+        - generic [ref=e1111]:
+          - paragraph [ref=e1112]: ©2026 Cybage Software Pvt. Ltd. All Rights Reserved.
+          - generic [ref=e1113]:
+            - generic [ref=e1114]: "|"
+            - link "Whistleblower@cybage.com" [ref=e1115] [cursor=pointer]:
+              - /url: mailto:Whistleblower@cybage.com
+            - generic [ref=e1116]: "|"
+            - link "Privacy Policy" [ref=e1117] [cursor=pointer]:
+              - /url: "\n/privacy-policy"
+  - alertdialog "sliding popup" [ref=e1119]:
+    - generic [ref=e1121]:
+      - document [ref=e1122]:
+        - heading "Access to the website sets a cookie to store our Data Protection Policy version. We do not store your personal information in cookies." [level=2] [ref=e1123]
+        - paragraph [ref=e1124]: Detailed information on the use of cookies on this website, and how you can decline them, is provided in our
+        - button "Data Privacy Page" [ref=e1125] [cursor=pointer]
+      - generic [ref=e1126]:
+        - button "Accept" [ref=e1127] [cursor=pointer]
+        - button "No, thanks" [ref=e1128] [cursor=pointer]

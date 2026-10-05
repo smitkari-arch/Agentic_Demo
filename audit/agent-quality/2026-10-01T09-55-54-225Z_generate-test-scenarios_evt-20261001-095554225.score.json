@@ -1,0 +1,154 @@
+{
+  "score_event_version": "v2",
+  "generated_at": "2026-10-01T10:14:11.219Z",
+  "source_event": {
+    "event_id": "evt-20261001-095554225",
+    "correlation_id": "KAN-7-run-20261001",
+    "jira_story_key": "KAN-7",
+    "skill": "generate-test-scenarios",
+    "actor_name": "Designer Agent",
+    "actor_id": "agent.designer.v1",
+    "status": "success",
+    "event_timestamp": "2026-10-01T09:55:54.225Z",
+    "workflow_stage": "Test Scenario Generation",
+    "message": "2 test cases generated for KAN-7",
+    "source_file": "audit/agent-actions/2026-10-01T09-55-54-225Z_generate-test-scenarios.json"
+  },
+  "metric_version": "v2",
+  "outcome_score": 84.44,
+  "confidence_score": 92.73,
+  "confidence_band": "High confidence",
+  "summary_line": "Good overall result. The generate test scenarios scored 84.44/100 quality with 92.73/100 confidence. The output is usable, but some evidence is less complete than ideal. The confidence is acceptable, but additional evidence would make the result more reliable.",
+  "detail_summary": "This run is acceptable and generally supported by evidence. The score and confidence are based on available validation and metric coverage.",
+  "recommendation": "Review the output quality and add stronger evidence before using it as a final decision input.",
+  "primary_reason_code": "NOT_APPLICABLE",
+  "missing_metric_list": [],
+  "metric_explanations": [
+    {
+      "key": "requirement_coverage",
+      "label": "Requirement Coverage",
+      "value": 100,
+      "reason_code": null,
+      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 84/100 and confidence score of 93/100."
+    },
+    {
+      "key": "acceptance_criteria_coverage",
+      "label": "Acceptance Criteria Coverage",
+      "value": 100,
+      "reason_code": null,
+      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 84/100 and confidence score of 93/100."
+    },
+    {
+      "key": "scenario_type_coverage",
+      "label": "Scenario Type Coverage",
+      "value": 33.33,
+      "reason_code": null,
+      "explanation": "This metric scored 33.33/100 and contributed limited support to the overall outcome score of 84/100 and confidence score of 93/100."
+    },
+    {
+      "key": "test_case_quality_score",
+      "label": "Test Case Quality Score",
+      "value": 100,
+      "reason_code": null,
+      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 84/100 and confidence score of 93/100."
+    },
+    {
+      "key": "uniqueness_score",
+      "label": "Uniqueness Score",
+      "value": 77.78,
+      "reason_code": null,
+      "explanation": "This metric scored 77.78/100 and contributed moderate support to the overall outcome score of 84/100 and confidence score of 93/100."
+    }
+  ],
+  "outcome_weights": {
+    "active_weight": 1,
+    "total_weight": 1,
+    "missing_weight": 0
+  },
+  "metrics": [
+    {
+      "key": "requirement_coverage",
+      "label": "Requirement Coverage",
+      "weight": 0.25,
+      "value": 100,
+      "raw_inputs": {
+        "spec_path": "playwrightTests/specs/KAN-7/verify-inline-error-message-for-blank-first-name-during-registration.md",
+        "parsed_test_cases": 2,
+        "event_test_cases": 2
+      }
+    },
+    {
+      "key": "acceptance_criteria_coverage",
+      "label": "Acceptance Criteria Coverage",
+      "weight": 0.25,
+      "value": 100,
+      "raw_inputs": {
+        "spec_path": "playwrightTests/specs/KAN-7/verify-inline-error-message-for-blank-first-name-during-registration.md",
+        "parsed_ac_refs": 2
+      }
+    },
+    {
+      "key": "scenario_type_coverage",
+      "label": "Scenario Type Coverage",
+      "weight": 0.2,
+      "value": 33.33,
+      "raw_inputs": {
+        "scenario_types_found": [
+          "negative"
+        ]
+      }
+    },
+    {
+      "key": "test_case_quality_score",
+      "label": "Test Case Quality Score",
+      "weight": 0.2,
+      "value": 100,
+      "raw_inputs": {
+        "quality_hits": 4,
+        "quality_checks": 4
+      }
+    },
+    {
+      "key": "uniqueness_score",
+      "label": "Uniqueness Score",
+      "weight": 0.1,
+      "value": 77.78,
+      "raw_inputs": {
+        "duplicate_lines": 8,
+        "analyzed_lines": 36
+      }
+    }
+  ],
+  "confidence_factors": [
+    {
+      "key": "evidence_completeness",
+      "label": "Evidence Completeness",
+      "weight": 0.4,
+      "value": 100,
+      "raw_inputs": {
+        "active_weight": 1,
+        "total_weight": 1,
+        "missing_weight": 0
+      }
+    },
+    {
+      "key": "validation_pass_rate",
+      "label": "Validation Pass Rate",
+      "weight": 0.35,
+      "value": 100,
+      "raw_inputs": {
+        "status": "success",
+        "message": "2 test cases generated for KAN-7"
+      }
+    },
+    {
+      "key": "historical_accuracy",
+      "label": "Historical Accuracy",
+      "weight": 0.25,
+      "value": 70.93,
+      "raw_inputs": {
+        "sample_size": 3
+      }
+    }
+  ]
+}

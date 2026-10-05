@@ -1,0 +1,45 @@
+{
+  "event_id": "evt-20260930-135238572",
+  "correlation_id": "KAN-2-run-20260930",
+  "jira_story_key": "KAN-2",
+  "event_timestamp": "2026-09-30T13:52:38.572Z",
+  "event_type": "agent_task_completed",
+  "event_category": "design",
+  "workflow_stage": "Test Scenario Generation",
+  "actor": {
+    "actor_type": "agent",
+    "actor_name": "Designer Agent",
+    "actor_id": "agent.designer.v1"
+  },
+  "source": {
+    "source_system": "GitHub Copilot IDE",
+    "source_component": "agent-runtime",
+    "source_reference_id": null
+  },
+  "status": "blocked",
+  "message": "Blocked: KAN-2 is not ready for test design because it lacks acceptance criteria and testable behavioral detail.",
+  "summary_line": "Outcome: The run was blocked. Blocked: KAN-2 is not ready for test design because it lacks acceptance criteria and testable behavioral detail. Recommended next step: unblock the dependency or missing input before retrying.",
+  "detail_summary": "Blocked: KAN-2 is not ready for test design because it lacks acceptance criteria and testable behavioral detail.",
+  "recommendation": "Resolve the blocker or missing input before retrying the workflow.",
+  "input_reference": {},
+  "usage": {
+    "total_tokens": null,
+    "tool_uses": null,
+    "duration_ms": null
+  },
+  "additional_details": {
+    "model_name": "GitHub Copilot",
+    "framework_version": "phase1-operationalization-v1",
+    "environment": "dev",
+    "human_summary": {
+      "summary_line": "Outcome: The run was blocked. Blocked: KAN-2 is not ready for test design because it lacks acceptance criteria and testable behavioral detail. Recommended next step: unblock the dependency or missing input before retrying.",
+      "detail_summary": "Blocked: KAN-2 is not ready for test design because it lacks acceptance criteria and testable behavioral detail.",
+      "recommendation": "Resolve the blocker or missing input before retrying the workflow."
+    },
+    "score_artifacts": {
+      "story_spec_path": null,
+      "playwright_spec_path": null,
+      "failure_report_path": null
+    }
+  }
+}

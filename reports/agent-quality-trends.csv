@@ -1,0 +1,9 @@
+Date,Skill,ActorName,Runs,AvgOutcomeScore,AvgConfidenceScore,HighConfidenceRuns,MediumConfidenceRuns,LowConfidenceRuns,NotReliableRuns
+2026-09-30,analyze-playwright-failure,Healer Agent,1,77.25,94.17,1,0,0,0
+2026-09-30,generate-playwright-ui-script,Scripter Agent,1,97.5,94.17,1,0,0,0
+2026-09-30,generate-test-scenarios,Designer Agent,3,70.93,90.11,2,0,1,0
+2026-09-30,jira-story-readiness,Planner Agent,4,42.46,73.55,1,0,3,0
+2026-10-01,analyze-playwright-failure,Healer Agent,1,77.25,89.94,0,1,0,0
+2026-10-01,generate-playwright-ui-script,Scripter Agent,1,80.83,95,1,0,0,0
+2026-10-01,generate-test-scenarios,Designer Agent,1,84.44,92.73,1,0,0,0
+2026-10-01,jira-story-readiness,Planner Agent,3,87.05,87.59,0,3,0,0

@@ -16,6 +16,14 @@ Once a run's completion arrives, if real `tokens`/`tool_uses`/`duration_ms` figu
 node .github/scripts/log-agent-action.js --skill <skill> --status <success|failure|blocked> --event-type agent_usage_reported --summary "Usage for this <Agent Name> run: <N> tokens, <M> tool calls, <D>ms" [--jira-story-key <key>] --tokens <N> --tool-uses <M> --duration-ms <D>
 ```
 
+Optional artifact-link flags for stronger scoring extraction:
+
+```
+--story-spec-path <playwrightTests/specs/...md>
+--playwright-spec-path <playwrightTests/tests/...spec.ts>
+--failure-report-path <playwrightTests/playwright-report/results.json>
+```
+
 - `--status` should mirror whatever that run's own completion log already used — don't recompute it independently.
 - `--jira-story-key` — include only if the run was tied to a single Jira story; omit otherwise. Never invent one.
 - This event shares that run's `correlation_id` automatically (same `--skill`/`--jira-story-key`/day → same auto-derived correlation ID) — no extra flag needed to link it.
@@ -27,7 +35,20 @@ Immediately after, regenerate the agent-execution report so it reflects this run
 node .github/scripts/generate-agent-execution-report.js --standalone
 ```
 
-This rewrites `reports/agent-execution-report.csv` from the full current `audit/agent-actions/` log — see [.github/scripts/generate-agent-execution-report.js](../scripts/generate-agent-execution-report.js). Keeps the report current after every run, deterministically, without depending on a separate review stage. Run it even if the usage-logging step above was skipped (e.g. missing figures) — the report still benefits from picking up the skill's own completion event.
+Then regenerate quality-scoring artifacts so score-linked reports stay current:
+
+```
+node .github/scripts/generate-agent-quality-evidence.js
+node .github/scripts/generate-agent-quality-report.js
+```
+
+Or run the same flow with one wrapper command:
+
+```
+node .github/scripts/refresh-agent-scoring.js --standalone
+```
+
+This rewrites `reports/agent-execution-report.csv` from the full current `audit/agent-actions/` log — see [.github/scripts/generate-agent-execution-report.js](../scripts/generate-agent-execution-report.js). The quality commands generate per-run evidence under `audit/agent-quality/`, validate schema, and produce dashboard CSVs under `reports/` via [.github/scripts/generate-agent-quality-evidence.js](../scripts/generate-agent-quality-evidence.js), [.github/scripts/validate-agent-quality-evidence.js](../scripts/validate-agent-quality-evidence.js), and [.github/scripts/generate-agent-quality-report.js](../scripts/generate-agent-quality-report.js). Keep all reports current after every run, deterministically, without depending on a separate review stage. Run them even if the usage-logging step above was skipped (e.g. missing figures).
 
 ## Per-agent `--skill` mapping
 

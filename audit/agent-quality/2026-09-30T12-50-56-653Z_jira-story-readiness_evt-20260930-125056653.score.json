@@ -1,0 +1,124 @@
+{
+  "score_event_version": "v2",
+  "generated_at": "2026-10-01T10:14:11.205Z",
+  "source_event": {
+    "event_id": "evt-20260930-125056653",
+    "correlation_id": "KAN-8-run-20260930",
+    "jira_story_key": "KAN-8",
+    "skill": "jira-story-readiness",
+    "actor_name": "Planner Agent",
+    "actor_id": "agent.planner.v1",
+    "status": "success",
+    "event_timestamp": "2026-09-30T12:50:56.653Z",
+    "workflow_stage": "Story Readiness Review",
+    "message": "Verdict: Ready for KAN-8; story has clear description and testable acceptance criteria.",
+    "source_file": "audit/agent-actions/2026-09-30T12-50-56-653Z_jira-story-readiness.json"
+  },
+  "metric_version": "v2",
+  "outcome_score": 87.05,
+  "confidence_score": 100,
+  "confidence_band": "High confidence",
+  "summary_line": "Strong result. The jira story readiness scored 87.05/100 quality with 100.00/100 confidence. The evidence is solid and the validation checks passed.",
+  "detail_summary": "This run is strong and well supported by evidence. The score and confidence are based on available validation and metric coverage.",
+  "recommendation": "Keep this as a reference example and continue monitoring trends over time.",
+  "primary_reason_code": "NOT_APPLICABLE",
+  "missing_metric_list": [],
+  "metric_explanations": [
+    {
+      "key": "acceptance_criteria_extraction_coverage",
+      "label": "Acceptance Criteria Extraction Coverage",
+      "value": 85,
+      "reason_code": null,
+      "explanation": "This metric scored 85/100 and contributed strong support to the overall outcome score of 87/100 and confidence score of 100/100."
+    },
+    {
+      "key": "requirement_testability_coverage",
+      "label": "Requirement Testability Coverage",
+      "value": 88,
+      "reason_code": null,
+      "explanation": "This metric scored 88/100 and contributed strong support to the overall outcome score of 87/100 and confidence score of 100/100."
+    },
+    {
+      "key": "story_clarity_coverage",
+      "label": "Story Clarity Coverage",
+      "value": 90,
+      "reason_code": null,
+      "explanation": "This metric scored 90/100 and contributed strong support to the overall outcome score of 87/100 and confidence score of 100/100."
+    }
+  ],
+  "outcome_weights": {
+    "active_weight": 1,
+    "total_weight": 1,
+    "missing_weight": 0
+  },
+  "metrics": [
+    {
+      "key": "acceptance_criteria_extraction_coverage",
+      "label": "Acceptance Criteria Extraction Coverage",
+      "weight": 0.45,
+      "value": 85,
+      "raw_inputs": {
+        "status": "success",
+        "message": "Verdict: Ready for KAN-8; story has clear description and testable acceptance criteria.",
+        "verdict": "ready"
+      }
+    },
+    {
+      "key": "requirement_testability_coverage",
+      "label": "Requirement Testability Coverage",
+      "weight": 0.35,
+      "value": 88,
+      "raw_inputs": {
+        "status": "success",
+        "message": "Verdict: Ready for KAN-8; story has clear description and testable acceptance criteria.",
+        "verdict": "ready"
+      }
+    },
+    {
+      "key": "story_clarity_coverage",
+      "label": "Story Clarity Coverage",
+      "weight": 0.2,
+      "value": 90,
+      "raw_inputs": {
+        "status": "success",
+        "message": "Verdict: Ready for KAN-8; story has clear description and testable acceptance criteria.",
+        "verdict": "ready",
+        "note": "Story clarity is derived from explicit blocking gaps and requirement testability in the Jira story itself."
+      }
+    }
+  ],
+  "confidence_factors": [
+    {
+      "key": "evidence_completeness",
+      "label": "Evidence Completeness",
+      "weight": 0.4,
+      "value": 100,
+      "raw_inputs": {
+        "active_weight": 1,
+        "total_weight": 1,
+        "missing_weight": 0
+      }
+    },
+    {
+      "key": "validation_pass_rate",
+      "label": "Validation Pass Rate",
+      "weight": 0.35,
+      "value": 100,
+      "raw_inputs": {
+        "status": "success",
+        "verdict": "ready",
+        "message": "Verdict: Ready for KAN-8; story has clear description and testable acceptance criteria."
+      }
+    },
+    {
+      "key": "historical_accuracy",
+      "label": "Historical Accuracy",
+      "weight": 0.25,
+      "value": null,
+      "reason_code": "HISTORICAL_BASELINE_UNAVAILABLE",
+      "raw_inputs": {
+        "note": "No historical completed runs for this agent yet."
+      }
+    }
+  ]
+}

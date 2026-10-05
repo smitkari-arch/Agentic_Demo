@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-10-05T05:57:33.058Z",
+  "session_id": "333eb784-dab3-472f-ac13-78a66703981f",
+  "hook_event_name": "UserPromptSubmit",
+  "matchCounts": {
+    "EMAIL": 1
+  },
+  "matches": [
+    {
+      "type": "EMAIL",
+      "value": "smitkari@cybage.com",
+      "start": 21,
+      "end": 40
+    }
+  ]
+}

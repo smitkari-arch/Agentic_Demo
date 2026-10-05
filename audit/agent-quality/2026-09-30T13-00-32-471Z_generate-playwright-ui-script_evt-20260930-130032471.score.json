@@ -1,0 +1,156 @@
+{
+  "score_event_version": "v2",
+  "generated_at": "2026-10-01T10:14:11.215Z",
+  "source_event": {
+    "event_id": "evt-20260930-130032471",
+    "correlation_id": "KAN-8-run-20260930",
+    "jira_story_key": "KAN-8",
+    "skill": "generate-playwright-ui-script",
+    "actor_name": "Scripter Agent",
+    "actor_id": "agent.scripter.v1",
+    "status": "success",
+    "event_timestamp": "2026-09-30T13:00:32.471Z",
+    "workflow_stage": "Script Generation (UI)",
+    "message": "5 scenarios scripted for KAN-8, npx playwright test passed",
+    "source_file": "audit/agent-actions/2026-09-30T13-00-32-471Z_generate-playwright-ui-script.json"
+  },
+  "metric_version": "v2",
+  "outcome_score": 97.5,
+  "confidence_score": 94.17,
+  "confidence_band": "High confidence",
+  "summary_line": "Strong result. The generate playwright ui script scored 97.50/100 quality with 94.17/100 confidence. The evidence is solid and the validation checks passed.",
+  "detail_summary": "This run is strong and well supported by evidence. The score and confidence are based on available validation and metric coverage.",
+  "recommendation": "Keep this as a reference example and continue monitoring trends over time.",
+  "primary_reason_code": "NOT_APPLICABLE",
+  "missing_metric_list": [],
+  "metric_explanations": [
+    {
+      "key": "script_generation_success_rate",
+      "label": "Script Generation Success Rate",
+      "value": 100,
+      "reason_code": null,
+      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 98/100 and confidence score of 94/100."
+    },
+    {
+      "key": "syntax_pass_rate",
+      "label": "Syntax Pass Rate",
+      "value": 87.5,
+      "reason_code": null,
+      "explanation": "This metric scored 87.5/100 and contributed strong support to the overall outcome score of 98/100 and confidence score of 94/100."
+    },
+    {
+      "key": "framework_compliance_score",
+      "label": "Framework Compliance Score",
+      "value": 100,
+      "reason_code": null,
+      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 98/100 and confidence score of 94/100."
+    },
+    {
+      "key": "assertion_quality_score",
+      "label": "Assertion Quality Score",
+      "value": 100,
+      "reason_code": null,
+      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 98/100 and confidence score of 94/100."
+    },
+    {
+      "key": "reusability_score",
+      "label": "Reusability Score",
+      "value": 100,
+      "reason_code": null,
+      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 98/100 and confidence score of 94/100."
+    }
+  ],
+  "outcome_weights": {
+    "active_weight": 1,
+    "total_weight": 1,
+    "missing_weight": 0
+  },
+  "metrics": [
+    {
+      "key": "script_generation_success_rate",
+      "label": "Script Generation Success Rate",
+      "weight": 0.2,
+      "value": 100,
+      "raw_inputs": {
+        "status": "success",
+        "files_analyzed": 1
+      }
+    },
+    {
+      "key": "syntax_pass_rate",
+      "label": "Syntax Pass Rate",
+      "weight": 0.2,
+      "value": 87.5,
+      "raw_inputs": {
+        "report_based": true,
+        "results_json_score": 87.5
+      }
+    },
+    {
+      "key": "framework_compliance_score",
+      "label": "Framework Compliance Score",
+      "weight": 0.2,
+      "value": 100,
+      "raw_inputs": {
+        "fixture_import_compliance": 100,
+        "page_object_compliance": 100,
+        "forbidden_wait_hits": 0,
+        "direct_page_locator_hits": 0
+      }
+    },
+    {
+      "key": "assertion_quality_score",
+      "label": "Assertion Quality Score",
+      "weight": 0.25,
+      "value": 100,
+      "raw_inputs": {
+        "total_assertions": 10,
+        "meaningful_assertions": 10
+      }
+    },
+    {
+      "key": "reusability_score",
+      "label": "Reusability Score",
+      "weight": 0.15,
+      "value": 100,
+      "raw_inputs": {
+        "files_with_page_objects": 1,
+        "files_analyzed": 1
+      }
+    }
+  ],
+  "confidence_factors": [
+    {
+      "key": "evidence_completeness",
+      "label": "Evidence Completeness",
+      "weight": 0.4,
+      "value": 100,
+      "raw_inputs": {
+        "active_weight": 1,
+        "total_weight": 1,
+        "missing_weight": 0
+      }
+    },
+    {
+      "key": "validation_pass_rate",
+      "label": "Validation Pass Rate",
+      "weight": 0.35,
+      "value": 87.5,
+      "raw_inputs": {
+        "source": "playwright-report/results.json",
+        "expected": 7,
+        "unexpected": 1
+      }
+    },
+    {
+      "key": "historical_accuracy",
+      "label": "Historical Accuracy",
+      "weight": 0.25,
+      "value": null,
+      "reason_code": "HISTORICAL_BASELINE_UNAVAILABLE",
+      "raw_inputs": {
+        "note": "No historical completed runs for this agent yet."
+      }
+    }
+  ]
+}

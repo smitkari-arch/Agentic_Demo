@@ -6,7 +6,7 @@ argument-hint: '[Jira story key or pasted story text]'
 
 # Jira Story Readiness
 
-Upstream gate for [generate-test-scenarios](../generate-test-scenarios/SKILL.md), per the Planner Agent role in [.github/agents/planner-agent.agent.md](../../agents/planner-agent.agent.md) and the "Story Readiness Review" row of [.github/instructions/raci.instructions.md](../../instructions/raci.instructions.md).
+Upstream gate for [generate-test-scenarios](../generate-test-scenarios/SKILL.md), per the Planner Agent role in [.github/agents/planner-agent.agent.md](../../agents/planner-agent.agent.md) and the repo execution model in [.github/instructions/execution-model.instructions.md](../../instructions/execution-model.instructions.md).
 
 ## Access & tool scope
 - **Invoke by:** anyone about to design test coverage from a story — read-only against the repo and Jira, lowest-risk skill here.

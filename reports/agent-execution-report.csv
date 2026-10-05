@@ -1,7 +1,16 @@
-Timestamp,Skill,ActorName,JiraStoryKey,Status,WorkflowStage,Summary,Tokens,ToolUses,DurationMs,EventId
-2026-09-15T07:02:12.359Z,jira-story-readiness,Planner Agent,KAN-6,success,Story Readiness Review,Verdict: Ready for KAN-6,,,,evt-20260915-070212359
-2026-09-15T08:24:15.959Z,generate-test-scenarios,Designer Agent,KAN-6,success,Test Scenario Generation,5 test cases generated for KAN-6,,,,evt-20260915-082415959
-2026-09-15T10:14:43.012Z,jira-story-readiness,Planner Agent,KAN-6,success,Story Readiness Review,Verdict: Ready for KAN-6,,,,evt-20260915-101443012
-2026-09-15T10:16:44.521Z,generate-test-scenarios,Designer Agent,KAN-6,success,Test Scenario Generation,6 test cases generated for KAN-6,,,,evt-20260915-101644521
-2026-09-15T10:20:12.462Z,generate-playwright-ui-script,Scripter Agent,KAN-6,success,Script Generation (UI),"1 scenario scripted, npx playwright test passed",,,,evt-20260915-102012462
-2026-09-15T11:45:16.079Z,jira-story-readiness,Planner Agent,KAN-6,success,Story Readiness Review,Verdict: Ready for KAN-6,,,,evt-20260915-114516079
+Timestamp,Skill,ActorName,ActorId,JiraStoryKey,CorrelationId,Status,WorkflowStage,Summary,EventId
+2026-09-30T12:50:56.653Z,jira-story-readiness,Planner Agent,agent.planner.v1,KAN-8,KAN-8-run-20260930,success,Story Readiness Review,Verdict: Ready for KAN-8; story has clear description and testable acceptance criteria.,evt-20260930-125056653
+2026-09-30T12:52:59.521Z,generate-test-scenarios,Designer Agent,agent.designer.v1,KAN-8,KAN-8-run-20260930,success,Test Scenario Generation,5 test cases generated for KAN-8,evt-20260930-125259521
+2026-09-30T12:53:10.371Z,generate-test-scenarios,Designer Agent,agent.designer.v1,KAN-8,KAN-8-run-20260930,success,Test Scenario Generation,5 test cases generated for KAN-8,evt-20260930-125310371
+2026-09-30T13:00:32.471Z,generate-playwright-ui-script,Scripter Agent,agent.scripter.v1,KAN-8,KAN-8-run-20260930,success,Script Generation (UI),"5 scenarios scripted for KAN-8, npx playwright test passed",evt-20260930-130032471
+2026-09-30T13:08:22.927Z,analyze-playwright-failure,Healer Agent,agent.healer.v1,KAN-8,KAN-8-run-20260930,success,Failure Healing,Fixed duplicate-email selector mismatch in RegisterPage; KAN-8 Playwright suite passed,evt-20260930-130822927
+2026-09-30T13:10:53.458Z,jira-story-readiness,Planner Agent,agent.planner.v1,KAN-2,KAN-2-run-20260930,success,Story Readiness Review,Verdict: Not Ready for KAN-2; missing acceptance criteria and testable conditions.,evt-20260930-131053458
+2026-09-30T13:30:16.487Z,jira-story-readiness,Planner Agent,agent.planner.v1,KAN-2,KAN-2-run-20260930,success,Story Readiness Review,Verdict: Not Ready for KAN-2: the issue is missing testable acceptance criteria and behavioral detail.,evt-20260930-133016487
+2026-09-30T13:51:34.985Z,jira-story-readiness,Planner Agent,agent.planner.v1,KAN-2,KAN-2-run-20260930,success,Story Readiness Review,Verdict: Not Ready for KAN-2: missing acceptance criteria and testable behavioral detail.,evt-20260930-135134985
+2026-09-30T13:52:38.572Z,generate-test-scenarios,Designer Agent,agent.designer.v1,KAN-2,KAN-2-run-20260930,blocked,Test Scenario Generation,Blocked: KAN-2 is not ready for test design because it lacks acceptance criteria and testable behavioral detail.,evt-20260930-135238572
+2026-10-01T08:42:45.659Z,jira-story-readiness,Planner Agent,agent.planner.v1,KAN-7,KAN-7-run-20261001,success,Story Readiness Review,Verdict: Ready for KAN-7,evt-20261001-084245659
+2026-10-01T09:07:30.339Z,jira-story-readiness,Planner Agent,agent.planner.v1,KAN-7,KAN-7-run-20261001,success,Story Readiness Review,Verdict: Ready for KAN-7,evt-20261001-090730339
+2026-10-01T09:54:02.893Z,jira-story-readiness,Planner Agent,agent.planner.v1,KAN-7,KAN-7-run-20261001,success,Story Readiness Review,Verdict: Ready for KAN-7,evt-20261001-095402893
+2026-10-01T09:55:54.225Z,generate-test-scenarios,Designer Agent,agent.designer.v1,KAN-7,KAN-7-run-20261001,success,Test Scenario Generation,2 test cases generated for KAN-7,evt-20261001-095554225
+2026-10-01T10:03:52.026Z,generate-playwright-ui-script,Scripter Agent,agent.scripter.v1,KAN-7,KAN-7-run-20261001,success,Script Generation (UI),2 KAN-7 scenarios passed,evt-20261001-100352026
+2026-10-01T10:14:10.857Z,analyze-playwright-failure,Healer Agent,agent.healer.v1,KAN-7,KAN-7-run-20261001,success,Failure Healing,Fixed deterministic assertion typo in KAN-7 test,evt-20261001-101410857

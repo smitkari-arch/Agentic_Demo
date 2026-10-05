@@ -18,8 +18,15 @@ This agent is a thin wrapper around the canonical workflow in [.github/skills/ji
 - Never write test cases, never call an Atlassian MCP Jira tool, and never guess a missing rule to make a story pass.
 
 ## Output
-Provide the verdict and gap list exactly as defined by the readiness skill.
+Provide the verdict and gap list exactly as defined by the readiness skill. In chat, keep the narrative first and then append a final score summary block in this exact format when scoring metadata is available:
+
+```text
+Scoring summary:
+Outcome: <quality>/100 quality with <confidence>/100 confidence. Main issue: <reason_code>. Recommended next step: <recommendation>.
+```
+
+If no score metadata exists, keep the verdict and say that scoring details were unavailable.
 
 ## Governance
-- Story Readiness Review row in [.github/instructions/raci.instructions.md](../instructions/raci.instructions.md)
 - Backed by [.github/skills/jira-story-readiness/SKILL.md](../skills/jira-story-readiness/SKILL.md)
+- Use the repo execution model and guardrails as the source of truth for workflow and approval gates

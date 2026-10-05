@@ -1,0 +1,156 @@
+{
+  "score_event_version": "v2",
+  "generated_at": "2026-10-01T10:14:11.210Z",
+  "source_event": {
+    "event_id": "evt-20260930-125259521",
+    "correlation_id": "KAN-8-run-20260930",
+    "jira_story_key": "KAN-8",
+    "skill": "generate-test-scenarios",
+    "actor_name": "Designer Agent",
+    "actor_id": "agent.designer.v1",
+    "status": "success",
+    "event_timestamp": "2026-09-30T12:52:59.521Z",
+    "workflow_stage": "Test Scenario Generation",
+    "message": "5 test cases generated for KAN-8",
+    "source_file": "audit/agent-actions/2026-09-30T12-52-59-521Z_generate-test-scenarios.json"
+  },
+  "metric_version": "v2",
+  "outcome_score": 89.64,
+  "confidence_score": 100,
+  "confidence_band": "High confidence",
+  "summary_line": "Strong result. The generate test scenarios scored 89.64/100 quality with 100.00/100 confidence. The evidence is solid and the validation checks passed.",
+  "detail_summary": "This run is strong and well supported by evidence. The score and confidence are based on available validation and metric coverage.",
+  "recommendation": "Keep this as a reference example and continue monitoring trends over time.",
+  "primary_reason_code": "NOT_APPLICABLE",
+  "missing_metric_list": [],
+  "metric_explanations": [
+    {
+      "key": "requirement_coverage",
+      "label": "Requirement Coverage",
+      "value": 100,
+      "reason_code": null,
+      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 90/100 and confidence score of 100/100."
+    },
+    {
+      "key": "acceptance_criteria_coverage",
+      "label": "Acceptance Criteria Coverage",
+      "value": 100,
+      "reason_code": null,
+      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 90/100 and confidence score of 100/100."
+    },
+    {
+      "key": "scenario_type_coverage",
+      "label": "Scenario Type Coverage",
+      "value": 66.67,
+      "reason_code": null,
+      "explanation": "This metric scored 66.67/100 and contributed limited support to the overall outcome score of 90/100 and confidence score of 100/100."
+    },
+    {
+      "key": "test_case_quality_score",
+      "label": "Test Case Quality Score",
+      "value": 100,
+      "reason_code": null,
+      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 90/100 and confidence score of 100/100."
+    },
+    {
+      "key": "uniqueness_score",
+      "label": "Uniqueness Score",
+      "value": 63.08,
+      "reason_code": null,
+      "explanation": "This metric scored 63.08/100 and contributed limited support to the overall outcome score of 90/100 and confidence score of 100/100."
+    }
+  ],
+  "outcome_weights": {
+    "active_weight": 1,
+    "total_weight": 1,
+    "missing_weight": 0
+  },
+  "metrics": [
+    {
+      "key": "requirement_coverage",
+      "label": "Requirement Coverage",
+      "weight": 0.25,
+      "value": 100,
+      "raw_inputs": {
+        "spec_path": "playwrightTests/specs/KAN-8/register-new-customer.md",
+        "parsed_test_cases": 5,
+        "event_test_cases": 5
+      }
+    },
+    {
+      "key": "acceptance_criteria_coverage",
+      "label": "Acceptance Criteria Coverage",
+      "weight": 0.25,
+      "value": 100,
+      "raw_inputs": {
+        "spec_path": "playwrightTests/specs/KAN-8/register-new-customer.md",
+        "parsed_ac_refs": 5
+      }
+    },
+    {
+      "key": "scenario_type_coverage",
+      "label": "Scenario Type Coverage",
+      "weight": 0.2,
+      "value": 66.67,
+      "raw_inputs": {
+        "scenario_types_found": [
+          "positive",
+          "negative"
+        ]
+      }
+    },
+    {
+      "key": "test_case_quality_score",
+      "label": "Test Case Quality Score",
+      "weight": 0.2,
+      "value": 100,
+      "raw_inputs": {
+        "quality_hits": 4,
+        "quality_checks": 4
+      }
+    },
+    {
+      "key": "uniqueness_score",
+      "label": "Uniqueness Score",
+      "weight": 0.1,
+      "value": 63.08,
+      "raw_inputs": {
+        "duplicate_lines": 24,
+        "analyzed_lines": 65
+      }
+    }
+  ],
+  "confidence_factors": [
+    {
+      "key": "evidence_completeness",
+      "label": "Evidence Completeness",
+      "weight": 0.4,
+      "value": 100,
+      "raw_inputs": {
+        "active_weight": 1,
+        "total_weight": 1,
+        "missing_weight": 0
+      }
+    },
+    {
+      "key": "validation_pass_rate",
+      "label": "Validation Pass Rate",
+      "weight": 0.35,
+      "value": 100,
+      "raw_inputs": {
+        "status": "success",
+        "message": "5 test cases generated for KAN-8"
+      }
+    },
+    {
+      "key": "historical_accuracy",
+      "label": "Historical Accuracy",
+      "weight": 0.25,
+      "value": null,
+      "reason_code": "HISTORICAL_BASELINE_UNAVAILABLE",
+      "raw_inputs": {
+        "note": "No historical completed runs for this agent yet."
+      }
+    }
+  ]
+}

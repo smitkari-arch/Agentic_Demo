@@ -28,3 +28,19 @@ jobs:
         name: playwright-report
         path: playwrightTests/playwright-report/
         retention-days: 30
+
+  quality-scoring-gate:
+    needs: test
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+    - name: Generate score evidence
+      run: node .github/scripts/generate-agent-quality-evidence.js
+    - name: Validate score evidence schema
+      run: node .github/scripts/validate-agent-quality-evidence.js
+    - name: Generate score reports
+      run: node .github/scripts/generate-agent-quality-report.js

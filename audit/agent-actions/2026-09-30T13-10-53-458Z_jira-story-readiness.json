@@ -1,0 +1,45 @@
+{
+  "event_id": "evt-20260930-131053458",
+  "correlation_id": "KAN-2-run-20260930",
+  "jira_story_key": "KAN-2",
+  "event_timestamp": "2026-09-30T13:10:53.458Z",
+  "event_type": "agent_task_completed",
+  "event_category": "planning",
+  "workflow_stage": "Story Readiness Review",
+  "actor": {
+    "actor_type": "agent",
+    "actor_name": "Planner Agent",
+    "actor_id": "agent.planner.v1"
+  },
+  "source": {
+    "source_system": "GitHub Copilot IDE",
+    "source_component": "agent-runtime",
+    "source_reference_id": null
+  },
+  "status": "success",
+  "message": "Verdict: Not Ready for KAN-2; missing acceptance criteria and testable conditions.",
+  "summary_line": "Outcome: The run completed successfully. Verdict: Not Ready for KAN-2; missing acceptance criteria and testable conditions. Recommended next step: review the outcome and continue to the next workflow step.",
+  "detail_summary": "Verdict: Not Ready for KAN-2; missing acceptance criteria and testable conditions.",
+  "recommendation": "Review the outcome and continue to the next workflow step.",
+  "input_reference": {},
+  "usage": {
+    "total_tokens": null,
+    "tool_uses": null,
+    "duration_ms": null
+  },
+  "additional_details": {
+    "model_name": "GitHub Copilot",
+    "framework_version": "phase1-operationalization-v1",
+    "environment": "dev",
+    "human_summary": {
+      "summary_line": "Outcome: The run completed successfully. Verdict: Not Ready for KAN-2; missing acceptance criteria and testable conditions. Recommended next step: review the outcome and continue to the next workflow step.",
+      "detail_summary": "Verdict: Not Ready for KAN-2; missing acceptance criteria and testable conditions.",
+      "recommendation": "Review the outcome and continue to the next workflow step."
+    },
+    "score_artifacts": {
+      "story_spec_path": null,
+      "playwright_spec_path": null,
+      "failure_report_path": null
+    }
+  }
+}

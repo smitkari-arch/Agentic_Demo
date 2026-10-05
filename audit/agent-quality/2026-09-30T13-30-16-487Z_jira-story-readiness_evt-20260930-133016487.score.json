@@ -1,0 +1,123 @@
+{
+  "score_event_version": "v2",
+  "generated_at": "2026-10-01T10:14:11.217Z",
+  "source_event": {
+    "event_id": "evt-20260930-133016487",
+    "correlation_id": "KAN-2-run-20260930",
+    "jira_story_key": "KAN-2",
+    "skill": "jira-story-readiness",
+    "actor_name": "Planner Agent",
+    "actor_id": "agent.planner.v1",
+    "status": "success",
+    "event_timestamp": "2026-09-30T13:30:16.487Z",
+    "workflow_stage": "Story Readiness Review",
+    "message": "Verdict: Not Ready for KAN-2: the issue is missing testable acceptance criteria and behavioral detail.",
+    "source_file": "audit/agent-actions/2026-09-30T13-30-16-487Z_jira-story-readiness.json"
+  },
+  "metric_version": "v2",
+  "outcome_score": 27.6,
+  "confidence_score": 63.08,
+  "confidence_band": "Low confidence",
+  "summary_line": "Partial result. The jira story readiness scored 27.60/100 quality with 63.08/100 confidence. The output was created, but validation quality was limited. The output was created, but key evidence is missing or validation was limited.",
+  "detail_summary": "This run was produced successfully, but the evidence did not fully support a higher confidence level.",
+  "recommendation": "Collect the missing evidence or rerun the workflow before relying on this score.",
+  "primary_reason_code": "NOT_APPLICABLE",
+  "missing_metric_list": [],
+  "metric_explanations": [
+    {
+      "key": "acceptance_criteria_extraction_coverage",
+      "label": "Acceptance Criteria Extraction Coverage",
+      "value": 24,
+      "reason_code": null,
+      "explanation": "This metric scored 24/100 and contributed limited support to the overall outcome score of 28/100 and confidence score of 63/100."
+    },
+    {
+      "key": "requirement_testability_coverage",
+      "label": "Requirement Testability Coverage",
+      "value": 28,
+      "reason_code": null,
+      "explanation": "This metric scored 28/100 and contributed limited support to the overall outcome score of 28/100 and confidence score of 63/100."
+    },
+    {
+      "key": "story_clarity_coverage",
+      "label": "Story Clarity Coverage",
+      "value": 35,
+      "reason_code": null,
+      "explanation": "This metric scored 35/100 and contributed limited support to the overall outcome score of 28/100 and confidence score of 63/100."
+    }
+  ],
+  "outcome_weights": {
+    "active_weight": 1,
+    "total_weight": 1,
+    "missing_weight": 0
+  },
+  "metrics": [
+    {
+      "key": "acceptance_criteria_extraction_coverage",
+      "label": "Acceptance Criteria Extraction Coverage",
+      "weight": 0.45,
+      "value": 24,
+      "raw_inputs": {
+        "status": "success",
+        "message": "Verdict: Not Ready for KAN-2: the issue is missing testable acceptance criteria and behavioral detail.",
+        "verdict": "not-ready"
+      }
+    },
+    {
+      "key": "requirement_testability_coverage",
+      "label": "Requirement Testability Coverage",
+      "weight": 0.35,
+      "value": 28,
+      "raw_inputs": {
+        "status": "success",
+        "message": "Verdict: Not Ready for KAN-2: the issue is missing testable acceptance criteria and behavioral detail.",
+        "verdict": "not-ready"
+      }
+    },
+    {
+      "key": "story_clarity_coverage",
+      "label": "Story Clarity Coverage",
+      "weight": 0.2,
+      "value": 35,
+      "raw_inputs": {
+        "status": "success",
+        "message": "Verdict: Not Ready for KAN-2: the issue is missing testable acceptance criteria and behavioral detail.",
+        "verdict": "not-ready",
+        "note": "Story clarity is derived from explicit blocking gaps and requirement testability in the Jira story itself."
+      }
+    }
+  ],
+  "confidence_factors": [
+    {
+      "key": "evidence_completeness",
+      "label": "Evidence Completeness",
+      "weight": 0.4,
+      "value": 100,
+      "raw_inputs": {
+        "active_weight": 1,
+        "total_weight": 1,
+        "missing_weight": 0
+      }
+    },
+    {
+      "key": "validation_pass_rate",
+      "label": "Validation Pass Rate",
+      "weight": 0.35,
+      "value": 25,
+      "raw_inputs": {
+        "status": "success",
+        "verdict": "not-ready",
+        "message": "Verdict: Not Ready for KAN-2: the issue is missing testable acceptance criteria and behavioral detail."
+      }
+    },
+    {
+      "key": "historical_accuracy",
+      "label": "Historical Accuracy",
+      "weight": 0.25,
+      "value": 57.33,
+      "raw_inputs": {
+        "sample_size": 2
+      }
+    }
+  ]
+}

@@ -47,7 +47,7 @@ The curl-path hook (above) only scans the terminal tool's own captured stdout/st
 - A **real, deterministic OCR library** is still not wired in anywhere — the fourth consumer above relies on an LLM's own vision reading, which is a different (and less verifiable) mechanism than the regex scanning used everywhere else in this file.
 
 ## Relationship to existing rules
-This is the concrete-tooling counterpart to the Data Protection controls described in [instructions/guardrails-policy.instructions.md](../instructions/guardrails-policy.instructions.md) and enforced by `copilot-instructions.md`'s "never hardcode real credentials or secrets" rule. See [instructions/phase1-scope.instructions.md](../instructions/phase1-scope.instructions.md#deferred--explicitly-excluded) for what remains deferred.
+This is the concrete-tooling counterpart to the Data Protection controls described in [instructions/guardrails-policy.instructions.md](../instructions/guardrails-policy.instructions.md) and enforced by `copilot-instructions.md`'s "never hardcode real credentials or secrets" rule. The remaining deferrals and exclusions are intentionally described in the active governance docs rather than a dedicated Phase 1 summary file.
 
 ## Open verification items for this Copilot-native port
 - Exact Atlassian MCP tool-name prefix (assumed `mcp_atlassian-mcp_*` based on this workspace's current environment) and exact terminal-tool name (assumed `run_in_terminal`) should be confirmed empirically once these hooks are live at a true workspace root — see the relevant scripts' own header comments in [.github/scripts/](../scripts/).

@@ -16,6 +16,7 @@ Adapted to this repo's actual Playwright-first skill and agent names for direct,
 6. **Human review / approval** remains a manual checkpoint for repo actions, defect decisions, and any external-system write when needed.
 7. Approved artifacts are pushed by the human, not autonomously, through the repo review or external-system gate.
 8. Automated Playwright runs continue in CI/CD as the repo's supported execution path.
+9. Optional post-run scoring refresh can be triggered with `node .github/scripts/refresh-agent-scoring.js --standalone` after each logged agent completion.
 
 ## Supporting layers (run throughout, not as discrete steps)
 - **Memory Bank (Knowledge Base)** — approved static contexts, app context, and workflow decisions. See [.github/memory/](../memory/).
