@@ -1,6 +1,6 @@
 {
   "score_event_version": "v2",
-  "generated_at": "2026-10-01T10:14:11.222Z",
+  "generated_at": "2026-10-06T09:02:01.340Z",
   "source_event": {
     "event_id": "evt-20261001-101410857",
     "correlation_id": "KAN-7-run-20261001",
@@ -15,10 +15,10 @@
     "source_file": "audit/agent-actions/2026-10-01T10-14-10-857Z_analyze-playwright-failure.json"
   },
   "metric_version": "v2",
-  "outcome_score": 77.25,
-  "confidence_score": 89.94,
-  "confidence_band": "Medium confidence",
-  "summary_line": "Good overall result. The analyze playwright failure scored 77.25/100 quality with 89.94/100 confidence. The output is usable, but some evidence is less complete than ideal. The confidence is acceptable, but additional evidence would make the result more reliable.",
+  "outcome_score": 78.27,
+  "confidence_score": 91.39,
+  "confidence_band": "High confidence",
+  "summary_line": "Good overall result. The analyze playwright failure scored 78.27/100 quality with 91.39/100 confidence. The output is usable, but some evidence is less complete than ideal. The confidence is acceptable, but additional evidence would make the result more reliable.",
   "detail_summary": "This run is acceptable and generally supported by evidence. The score and confidence are based on available validation and metric coverage.",
   "recommendation": "Review the output quality and add stronger evidence before using it as a final decision input.",
   "primary_reason_code": "NOT_APPLICABLE",
@@ -29,28 +29,28 @@
       "label": "Failure Reproduction Rate",
       "value": 70,
       "reason_code": null,
-      "explanation": "This metric scored 70/100 and contributed moderate support to the overall outcome score of 77/100 and confidence score of 90/100."
+      "explanation": "This metric scored 70/100 and contributed moderate support to the overall outcome score of 78/100 and confidence score of 91/100."
     },
     {
       "key": "healing_success_rate",
       "label": "Healing Success Rate",
       "value": 95,
       "reason_code": null,
-      "explanation": "This metric scored 95/100 and contributed strong support to the overall outcome score of 77/100 and confidence score of 90/100."
+      "explanation": "This metric scored 95/100 and contributed strong support to the overall outcome score of 78/100 and confidence score of 91/100."
     },
     {
       "key": "regression_safety_score",
       "label": "Regression Safety Score",
-      "value": 87.5,
+      "value": 90.91,
       "reason_code": null,
-      "explanation": "This metric scored 87.5/100 and contributed strong support to the overall outcome score of 77/100 and confidence score of 90/100."
+      "explanation": "This metric scored 90.91/100 and contributed strong support to the overall outcome score of 78/100 and confidence score of 91/100."
     },
     {
       "key": "false_healing_rate",
       "label": "False Healing Rate",
       "value": 25,
       "reason_code": null,
-      "explanation": "This metric scored 25/100 and contributed limited support to the overall outcome score of 77/100 and confidence score of 90/100."
+      "explanation": "This metric scored 25/100 and contributed limited support to the overall outcome score of 78/100 and confidence score of 91/100."
     }
   ],
   "outcome_weights": {
@@ -83,7 +83,7 @@
       "key": "regression_safety_score",
       "label": "Regression Safety Score",
       "weight": 0.3,
-      "value": 87.5,
+      "value": 90.91,
       "raw_inputs": {
         "source": "playwright-report/results.json",
         "last_run_status": "failed"
@@ -117,10 +117,10 @@
       "key": "validation_pass_rate",
       "label": "Validation Pass Rate",
       "weight": 0.35,
-      "value": 87.5,
+      "value": 90.91,
       "raw_inputs": {
         "source": "playwright-report/results.json",
-        "expected": 7,
+        "expected": 10,
         "unexpected": 1
       }
     },
@@ -128,7 +128,7 @@
       "key": "historical_accuracy",
       "label": "Historical Accuracy",
       "weight": 0.25,
-      "value": 77.25,
+      "value": 78.27,
       "raw_inputs": {
         "sample_size": 1
       }

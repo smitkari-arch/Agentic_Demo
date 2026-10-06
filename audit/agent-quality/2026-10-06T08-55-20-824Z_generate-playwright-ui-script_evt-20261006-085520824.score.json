@@ -1,26 +1,26 @@
 {
   "score_event_version": "v2",
-  "generated_at": "2026-10-06T09:02:01.339Z",
+  "generated_at": "2026-10-06T09:02:01.342Z",
   "source_event": {
-    "event_id": "evt-20261001-100352026",
-    "correlation_id": "KAN-7-run-20261001",
-    "jira_story_key": "KAN-7",
+    "event_id": "evt-20261006-085520824",
+    "correlation_id": "KAN-9-run-20261006",
+    "jira_story_key": "KAN-9",
     "skill": "generate-playwright-ui-script",
     "actor_name": "Scripter Agent",
     "actor_id": "agent.scripter.v1",
     "status": "success",
-    "event_timestamp": "2026-10-01T10:03:52.026Z",
+    "event_timestamp": "2026-10-06T08:55:20.824Z",
     "workflow_stage": "Script Generation (UI)",
-    "message": "2 KAN-7 scenarios passed",
-    "source_file": "audit/agent-actions/2026-10-01T10-03-52-026Z_generate-playwright-ui-script.json"
+    "message": "3 Playwright scenarios verified for KAN-9",
+    "source_file": "audit/agent-actions/2026-10-06T08-55-20-824Z_generate-playwright-ui-script.json"
   },
   "metric_version": "v2",
-  "outcome_score": 81.51,
-  "confidence_score": 96.36,
+  "outcome_score": 95.78,
+  "confidence_score": 94.28,
   "confidence_band": "High confidence",
-  "summary_line": "Good overall result. The generate playwright ui script scored 81.51/100 quality with 96.36/100 confidence. The output is usable, but some evidence is less complete than ideal. The confidence is acceptable, but additional evidence would make the result more reliable.",
-  "detail_summary": "This run is acceptable and generally supported by evidence. The score and confidence are based on available validation and metric coverage.",
-  "recommendation": "Review the output quality and add stronger evidence before using it as a final decision input.",
+  "summary_line": "Strong result. The generate playwright ui script scored 95.78/100 quality with 94.28/100 confidence. The evidence is solid and the validation checks passed.",
+  "detail_summary": "This run is strong and well supported by evidence. The score and confidence are based on available validation and metric coverage.",
+  "recommendation": "Keep this as a reference example and continue monitoring trends over time.",
   "primary_reason_code": "NOT_APPLICABLE",
   "missing_metric_list": [],
   "metric_explanations": [
@@ -29,35 +29,35 @@
       "label": "Script Generation Success Rate",
       "value": 100,
       "reason_code": null,
-      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 82/100 and confidence score of 96/100."
+      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 96/100 and confidence score of 94/100."
     },
     {
       "key": "syntax_pass_rate",
       "label": "Syntax Pass Rate",
       "value": 90.91,
       "reason_code": null,
-      "explanation": "This metric scored 90.91/100 and contributed strong support to the overall outcome score of 82/100 and confidence score of 96/100."
+      "explanation": "This metric scored 90.91/100 and contributed strong support to the overall outcome score of 96/100 and confidence score of 94/100."
     },
     {
       "key": "framework_compliance_score",
       "label": "Framework Compliance Score",
-      "value": 100,
+      "value": 88,
       "reason_code": null,
-      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 82/100 and confidence score of 96/100."
+      "explanation": "This metric scored 88/100 and contributed strong support to the overall outcome score of 96/100 and confidence score of 94/100."
     },
     {
       "key": "assertion_quality_score",
       "label": "Assertion Quality Score",
-      "value": 33.33,
+      "value": 100,
       "reason_code": null,
-      "explanation": "This metric scored 33.33/100 and contributed limited support to the overall outcome score of 82/100 and confidence score of 96/100."
+      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 96/100 and confidence score of 94/100."
     },
     {
       "key": "reusability_score",
       "label": "Reusability Score",
       "value": 100,
       "reason_code": null,
-      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 82/100 and confidence score of 96/100."
+      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 96/100 and confidence score of 94/100."
     }
   ],
   "outcome_weights": {
@@ -90,22 +90,22 @@
       "key": "framework_compliance_score",
       "label": "Framework Compliance Score",
       "weight": 0.2,
-      "value": 100,
+      "value": 88,
       "raw_inputs": {
         "fixture_import_compliance": 100,
         "page_object_compliance": 100,
         "forbidden_wait_hits": 0,
-        "direct_page_locator_hits": 0
+        "direct_page_locator_hits": 6
       }
     },
     {
       "key": "assertion_quality_score",
       "label": "Assertion Quality Score",
       "weight": 0.25,
-      "value": 33.33,
+      "value": 100,
       "raw_inputs": {
-        "total_assertions": 9,
-        "meaningful_assertions": 3
+        "total_assertions": 8,
+        "meaningful_assertions": 8
       }
     },
     {
@@ -146,9 +146,9 @@
       "key": "historical_accuracy",
       "label": "Historical Accuracy",
       "weight": 0.25,
-      "value": 98.18,
+      "value": 89.84,
       "raw_inputs": {
-        "sample_size": 1
+        "sample_size": 2
       }
     }
   ]

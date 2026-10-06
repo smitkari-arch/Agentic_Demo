@@ -1,6 +1,6 @@
 {
   "score_event_version": "v2",
-  "generated_at": "2026-10-01T10:14:11.215Z",
+  "generated_at": "2026-10-06T09:02:01.332Z",
   "source_event": {
     "event_id": "evt-20260930-130032471",
     "correlation_id": "KAN-8-run-20260930",
@@ -15,10 +15,10 @@
     "source_file": "audit/agent-actions/2026-09-30T13-00-32-471Z_generate-playwright-ui-script.json"
   },
   "metric_version": "v2",
-  "outcome_score": 97.5,
-  "confidence_score": 94.17,
+  "outcome_score": 98.18,
+  "confidence_score": 95.76,
   "confidence_band": "High confidence",
-  "summary_line": "Strong result. The generate playwright ui script scored 97.50/100 quality with 94.17/100 confidence. The evidence is solid and the validation checks passed.",
+  "summary_line": "Strong result. The generate playwright ui script scored 98.18/100 quality with 95.76/100 confidence. The evidence is solid and the validation checks passed.",
   "detail_summary": "This run is strong and well supported by evidence. The score and confidence are based on available validation and metric coverage.",
   "recommendation": "Keep this as a reference example and continue monitoring trends over time.",
   "primary_reason_code": "NOT_APPLICABLE",
@@ -29,35 +29,35 @@
       "label": "Script Generation Success Rate",
       "value": 100,
       "reason_code": null,
-      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 98/100 and confidence score of 94/100."
+      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 98/100 and confidence score of 96/100."
     },
     {
       "key": "syntax_pass_rate",
       "label": "Syntax Pass Rate",
-      "value": 87.5,
+      "value": 90.91,
       "reason_code": null,
-      "explanation": "This metric scored 87.5/100 and contributed strong support to the overall outcome score of 98/100 and confidence score of 94/100."
+      "explanation": "This metric scored 90.91/100 and contributed strong support to the overall outcome score of 98/100 and confidence score of 96/100."
     },
     {
       "key": "framework_compliance_score",
       "label": "Framework Compliance Score",
       "value": 100,
       "reason_code": null,
-      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 98/100 and confidence score of 94/100."
+      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 98/100 and confidence score of 96/100."
     },
     {
       "key": "assertion_quality_score",
       "label": "Assertion Quality Score",
       "value": 100,
       "reason_code": null,
-      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 98/100 and confidence score of 94/100."
+      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 98/100 and confidence score of 96/100."
     },
     {
       "key": "reusability_score",
       "label": "Reusability Score",
       "value": 100,
       "reason_code": null,
-      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 98/100 and confidence score of 94/100."
+      "explanation": "This metric scored 100/100 and contributed strong support to the overall outcome score of 98/100 and confidence score of 96/100."
     }
   ],
   "outcome_weights": {
@@ -80,10 +80,10 @@
       "key": "syntax_pass_rate",
       "label": "Syntax Pass Rate",
       "weight": 0.2,
-      "value": 87.5,
+      "value": 90.91,
       "raw_inputs": {
         "report_based": true,
-        "results_json_score": 87.5
+        "results_json_score": 90.91
       }
     },
     {
@@ -135,10 +135,10 @@
       "key": "validation_pass_rate",
       "label": "Validation Pass Rate",
       "weight": 0.35,
-      "value": 87.5,
+      "value": 90.91,
       "raw_inputs": {
         "source": "playwright-report/results.json",
-        "expected": 7,
+        "expected": 10,
         "unexpected": 1
       }
     },

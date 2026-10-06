@@ -1,0 +1,45 @@
+{
+  "event_id": "evt-20261006-090200901",
+  "correlation_id": "KAN-9-run-20261006",
+  "jira_story_key": "KAN-9",
+  "event_timestamp": "2026-10-06T09:02:00.901Z",
+  "event_type": "agent_task_completed",
+  "event_category": "healing",
+  "workflow_stage": "Failure Healing",
+  "actor": {
+    "actor_type": "agent",
+    "actor_name": "Healer Agent",
+    "actor_id": "agent.healer.v1"
+  },
+  "source": {
+    "source_system": "GitHub Copilot IDE",
+    "source_component": "agent-runtime",
+    "source_reference_id": null
+  },
+  "status": "success",
+  "message": "Fixed typo in KAN-9 logout assertion",
+  "summary_line": "Outcome: The run completed successfully. Fixed typo in KAN-9 logout assertion Recommended next step: review the outcome and continue to the next workflow step.",
+  "detail_summary": "Fixed typo in KAN-9 logout assertion",
+  "recommendation": "Review the outcome and continue to the next workflow step.",
+  "input_reference": {},
+  "usage": {
+    "total_tokens": null,
+    "tool_uses": null,
+    "duration_ms": null
+  },
+  "additional_details": {
+    "model_name": "GitHub Copilot",
+    "framework_version": "phase1-operationalization-v1",
+    "environment": "dev",
+    "human_summary": {
+      "summary_line": "Outcome: The run completed successfully. Fixed typo in KAN-9 logout assertion Recommended next step: review the outcome and continue to the next workflow step.",
+      "detail_summary": "Fixed typo in KAN-9 logout assertion",
+      "recommendation": "Review the outcome and continue to the next workflow step."
+    },
+    "score_artifacts": {
+      "story_spec_path": null,
+      "playwright_spec_path": null,
+      "failure_report_path": null
+    }
+  }
+}
