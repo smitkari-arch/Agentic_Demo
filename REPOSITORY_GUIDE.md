@@ -57,7 +57,6 @@ The repo also includes guardrails for:
 | [playwrightTests](playwrightTests) | Actual Playwright test project: config, pages, tests, fixtures, reports |
 | [playwrightTests/specs](playwrightTests/specs) | Business-level design artifacts for stories |
 | [audit](audit) | Execution and audit logs |
-| [artifacts](artifacts) | Generated artifacts and supporting outputs |
 | [reports](reports) | KPI and summary reports |
 | [test-results](test-results) | Local test-run outputs |
 | [rtk](rtk) | Rust token-reduction project used to trim terminal output |
@@ -428,14 +427,13 @@ This is where business intent and automation begin to meet.
 
 ---
 
-### 4.11 audit and artifacts
+### 4.11 audit and evidence
 
-These folders store project execution evidence.
+This folder stores project execution evidence.
 
 - [audit](audit)
-- [artifacts](artifacts)
 
-They are used to preserve:
+It is used to preserve:
 - logs
 - PII scan results
 - agent action history
