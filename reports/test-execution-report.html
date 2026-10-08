@@ -134,22 +134,22 @@
       <section class="summary-grid">
         <div class="card">
           <div class="metric-label">Total runs</div>
-          <div class="metric-value primary">20</div>
+          <div class="metric-value primary">22</div>
           <div class="metric-sub">Execution snapshots</div>
         </div>
         <div class="card">
           <div class="metric-label">Passed</div>
-          <div class="metric-value success">121</div>
-          <div class="metric-sub">93.8% pass rate</div>
+          <div class="metric-value success">142</div>
+          <div class="metric-sub">94.0% pass rate</div>
         </div>
         <div class="card">
           <div class="metric-label">Failed</div>
-          <div class="metric-value danger">8</div>
-          <div class="metric-sub">6.2% fail rate</div>
+          <div class="metric-value danger">9</div>
+          <div class="metric-sub">6.0% fail rate</div>
         </div>
         <div class="card">
           <div class="metric-label">Avg duration</div>
-          <div class="metric-value warning">32.42s</div>
+          <div class="metric-value warning">36.31s</div>
           <div class="metric-sub">Per run average</div>
         </div>
       </section>
@@ -157,6 +157,28 @@
       <section class="section">
         <h2>Recent trend</h2>
         <div class="trend-list">
+      <div class="trend-item">
+        <div class="time">10/6/2026, 2:41:29 PM</div>
+        <div>
+          <div class="progress">
+            <div class="progress-bar pass" style="width: 100%;"></div>
+            <div class="progress-bar fail" style="width: 0%; margin-top: -12px;"></div>
+          </div>
+        </div>
+        <div class="count">11/11</div>
+      </div>
+    
+      <div class="trend-item">
+        <div class="time">10/6/2026, 2:40:02 PM</div>
+        <div>
+          <div class="progress">
+            <div class="progress-bar pass" style="width: 90.9090909090909%;"></div>
+            <div class="progress-bar fail" style="width: 9.090909090909092%; margin-top: -12px;"></div>
+          </div>
+        </div>
+        <div class="count">10/11</div>
+      </div>
+    
       <div class="trend-item">
         <div class="time">10/6/2026, 2:31:50 PM</div>
         <div>
@@ -381,7 +403,7 @@
 
       <section class="section">
         <h2>Execution history</h2>
-        <div style="margin-bottom: 12px; color: var(--muted);">Latest run: Failing — 10/11 passed in 76.56286499999999s</div>
+        <div style="margin-bottom: 12px; color: var(--muted);">Latest run: Passing — 11/11 passed in 73.875666s</div>
         <table>
           <thead>
             <tr>
@@ -396,6 +418,28 @@
             </tr>
           </thead>
           <tbody>
+      <tr>
+        <td>10/6/2026, 2:41:29 PM</td>
+        <td>results.json</td>
+        <td>11</td>
+        <td>11</td>
+        <td>0</td>
+        <td>0</td>
+        <td>73.875666</td>
+        <td><span class="status-badge status-pass">Passing</span></td>
+      </tr>
+    
+      <tr>
+        <td>10/6/2026, 2:40:02 PM</td>
+        <td>results.json</td>
+        <td>11</td>
+        <td>10</td>
+        <td>1</td>
+        <td>0</td>
+        <td>76.56286499999999</td>
+        <td><span class="status-badge status-fail">Failing</span></td>
+      </tr>
+    
       <tr>
         <td>10/6/2026, 2:31:50 PM</td>
         <td>results.json</td>

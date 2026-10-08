@@ -1,0 +1,45 @@
+{
+  "event_id": "evt-20261007-063736806",
+  "correlation_id": "KAN-1-run-20261007",
+  "jira_story_key": "KAN-1",
+  "event_timestamp": "2026-10-07T06:37:36.806Z",
+  "event_type": "agent_task_completed",
+  "event_category": "planning",
+  "workflow_stage": "Story Readiness Review",
+  "actor": {
+    "actor_type": "agent",
+    "actor_name": "Planner Agent",
+    "actor_id": "agent.planner.v1"
+  },
+  "source": {
+    "source_system": "GitHub Copilot IDE",
+    "source_component": "agent-runtime",
+    "source_reference_id": null
+  },
+  "status": "success",
+  "message": "Verdict: Ready for KAN-1; the story is specific, testable, and has clear acceptance criteria with no blocking gaps.",
+  "summary_line": "Outcome: The run completed successfully. Verdict: Ready for KAN-1; the story is specific, testable, and has clear acceptance criteria with no blocking gaps. Recommended next step: review the outcome and continue to the next workflow step.",
+  "detail_summary": "Verdict: Ready for KAN-1; the story is specific, testable, and has clear acceptance criteria with no blocking gaps.",
+  "recommendation": "Review the outcome and continue to the next workflow step.",
+  "input_reference": {},
+  "usage": {
+    "total_tokens": null,
+    "tool_uses": null,
+    "duration_ms": null
+  },
+  "additional_details": {
+    "model_name": "GitHub Copilot",
+    "framework_version": "phase1-operationalization-v1",
+    "environment": "dev",
+    "human_summary": {
+      "summary_line": "Outcome: The run completed successfully. Verdict: Ready for KAN-1; the story is specific, testable, and has clear acceptance criteria with no blocking gaps. Recommended next step: review the outcome and continue to the next workflow step.",
+      "detail_summary": "Verdict: Ready for KAN-1; the story is specific, testable, and has clear acceptance criteria with no blocking gaps.",
+      "recommendation": "Review the outcome and continue to the next workflow step."
+    },
+    "score_artifacts": {
+      "story_spec_path": null,
+      "playwright_spec_path": null,
+      "failure_report_path": null
+    }
+  }
+}
